@@ -1,0 +1,48 @@
+.main-section {
+  background-color: #F2F4F8;
+  min-height: 100vh;
+
+  .window-top {
+    height: 65px;
+
+    .logo {
+      font-family: 'Century Gothic', serif;
+      text-align: center;
+      margin: 6px 0 7px 38px;
+
+      .main-logo {
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 47px;
+      }
+
+      .description-logo {
+        font-size: 9px;
+        letter-spacing: 0.3px;
+        font-family: 'Arial', serif;
+      }
+    }
+
+    .user-avatar {
+      .mat-button {
+        img {
+          margin-left: 13px;
+        }
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+
+    .main-content {
+      width: 100%;
+    }
+  }
+
+}
+
+.disable-scroll {
+  overflow: hidden;
+  max-height: 100vh;
+}

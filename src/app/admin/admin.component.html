@@ -1,0 +1,15 @@
+<section class="main-section" [ngClass]="{'disable-scroll': needToDisableScroll}">
+  <section class="window-top">
+    <app-admin-header></app-admin-header>
+  </section>
+  <section class="body">
+    <div class="nav-bar">
+      <app-admin-nav-bar></app-admin-nav-bar>
+    </div>
+    <div class="main-content">
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </section>
+</section>

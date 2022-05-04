@@ -1,0 +1,102 @@
+//@import '_variables.scss';
+
+@mixin configure-button() {
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  .img-container {
+    min-width: 20px;
+    max-width: 20px;
+
+    img {
+      filter: invert(100%) grayscale(100%) invert(64%) sepia(37%) saturate(225%) hue-rotate(167deg) brightness(122%) contrast(87%);
+    }
+  }
+
+  span {
+    font-size: 16px;
+    font-family: 'SF Pro Display', serif;
+    margin-left: 16px;
+    width: 100%;
+    z-index: 1; // need to show text under mat click animation
+  }
+}
+
+@mixin active-list-element() {
+  span {
+    font-weight: bold;
+  }
+  mat-icon {
+    filter: grayscale(100%) invert(54%) sepia(19%) saturate(2500%) hue-rotate(
+        176deg) brightness(88%) contrast(113%);
+  }
+}
+
+.nav {
+  height: 100vh;
+  background-color: white;
+  padding: 15px 5px;
+  width: 250px;
+  box-shadow: 0 3px 12px #00000014;
+}
+
+#nav-main {
+  mat-nav-list {
+    a {
+      height: 54px;
+      display: flex;
+      align-items: center;
+      @include configure-button();
+
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+
+    &.mat-list-base {
+      padding-top: 0;
+
+      .mat-list-item {
+        &.active-list-item {
+          @include active-list-element();
+          background-color: rgba(227, 233, 239, 0.5);
+        }
+      }
+    }
+  }
+}
+
+mat-expansion-panel {
+  @include configure-button();
+  box-sizing: border-box;
+  position: relative;
+  height: inherit;
+  margin-top: 5px;
+
+  &:not([class*=mat-elevation-z]) {
+    //box-shadow: unset;
+  }
+
+  .mat-expansion-panel-header {
+    padding: unset;
+    height: fit-content;
+  }
+
+  .mat-expansion-panel-header-title {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    padding: 0 19px;
+  }
+
+  &.active-list-item {
+    background-color: rgba(227, 233, 239, 0.5);
+
+    .mat-expansion-panel-header-title {
+      @include active-list-element();
+    }
+
+  }
+}
