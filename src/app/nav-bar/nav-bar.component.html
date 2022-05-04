@@ -1,0 +1,25 @@
+<div class="header-container">
+  <div class="logo">
+    Horizon
+  </div>
+
+  <div class="spaces"></div>
+
+  <a mat-button routerLink="home">Home</a>
+  <a mat-button>Service</a>
+  <a *ngIf="!currentUser" mat-button routerLink="login">Login</a>
+  <a *ngIf="!currentUser" mat-button routerLink="registration">Registration</a>
+
+  <a *ngIf="currentUser"
+     mat-button
+     [matMenuTriggerFor]="menu"
+  >
+    {{currentUser?.firstName}}
+  </a>
+  <mat-menu #menu="matMenu" xPosition="before"
+            class="mat-elevation-z1 nav-dropdown">
+    <button mat-menu-item (click)="logout()">
+      Logout
+    </button>
+  </mat-menu>
+</div>

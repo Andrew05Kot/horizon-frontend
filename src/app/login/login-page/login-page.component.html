@@ -1,0 +1,37 @@
+<section [ngStyle]="{ background: 'login_wallpapper.jpg' | asUrl }">
+  <div class="box">
+    <div class="form">
+      <h2>Login</h2>
+
+      <form>
+        <div class="input-box">
+          <input type="email" placeholder="Email">
+          <img src="assets/icons/user.png" alt="user">
+        </div>
+
+        <div class="input-box">
+          <input type="password" placeholder="Password">
+          <img src="assets/icons/lock.png" alt="lock">
+        </div>
+
+        <div class="input-box">
+          <input type="submit" value="Login">
+        </div>
+      </form>
+
+      <button (click)="loginGoogle()">
+        <div class="logo"><img src="assets/icons/google.png" alt="google"></div>
+        <div class="caption">Login via Google</div>
+      </button>
+
+      <button (click)="loginViaFacebook()">
+        <div class="logo"><img src="assets/icons/facebook.png" alt="facebook"></div>
+        <div class="caption">Login via Facebook</div>
+      </button>
+
+<!--      TODO future-->
+<!--      <p>Forget <a href="#">Password</a></p>-->
+
+    </div>
+  </div>
+</section>

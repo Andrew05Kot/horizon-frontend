@@ -1,0 +1,13 @@
+.mat-menu-panel {
+
+    &.nav-dropdown {
+      width: 150px;
+      background: rgba(255, 255, 255, 0.1) ;
+
+      button {
+        font-size: 18px;
+        font-weight: 700;
+        color: antiquewhite;
+      }
+    }
+}
