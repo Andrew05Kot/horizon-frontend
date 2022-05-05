@@ -4,10 +4,10 @@
   </section>
   <section class="body">
     <div class="nav-bar">
-      <app-admin-nav-bar></app-admin-nav-bar>
+      <app-admin-nav-bar (onToggleSideNav)="onToggleSideNav($event)" ></app-admin-nav-bar>
     </div>
     <div class="main-content">
-      <div class="content">
+      <div class="content" [ngClass]="contentClass">
         <router-outlet></router-outlet>
       </div>
     </div>

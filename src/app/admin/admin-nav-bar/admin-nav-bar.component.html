@@ -1,12 +1,22 @@
-<div class="nav">
-  <section id="nav-main">
-    <mat-nav-list>
-      <a mat-list-item routerLink="users" routerLinkActive="active-list-item">
-        <div class="img-container">
-          <mat-icon>person_add</mat-icon>
-        </div>
-        Users
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">H</button>
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">Horizon</div>
+    <button class="btn-close" *ngIf="collapsed" @rotate (click)="closeSidenav()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a [routerLink]="[data.routerLink]"
+         class="sidenav-nav-link"
+         routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon>{{data.icon}}</mat-icon>
+        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+          {{data.label}}
+        </span>
       </a>
-    </mat-nav-list>
-  </section>
+    </li>
+  </ul>
 </div>

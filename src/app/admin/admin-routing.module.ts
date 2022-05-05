@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "../home/home.component";
 import {UserTableComponent} from "./user/user-table/user-table.component";
 import {AdminComponent} from "./admin.component";
+import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
       },
       {
         path: 'users', component: UserTableComponent
+      },
+      {
+        path: 'dashboard', component: AdminDashboardComponent
       }
     ]
   }
