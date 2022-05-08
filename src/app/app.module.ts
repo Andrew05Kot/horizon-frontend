@@ -19,6 +19,11 @@ import { ToursListComponent } from './tour/tours-list/tours-list.component';
 import {MatCardModule} from "@angular/material/card";
 import { TourCardComponent } from './tour/tour-card/tour-card.component';
 import {MatIconModule} from "@angular/material/icon";
+import { TourEditPageComponent } from './tour/tour-edit-page/tour-edit-page.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {NgxEditorModule} from "ngx-editor";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -29,20 +34,25 @@ import {MatIconModule} from "@angular/material/icon";
     NavBarComponent,
     HomeComponent,
     ToursListComponent,
-    TourCardComponent
+    TourCardComponent,
+    TourEditPageComponent
   ],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		MatButtonModule,
-		HttpClientModule,
-		MatToolbarModule,
-		MatButtonModule,
-		MatMenuModule,
-		MatCardModule,
-		MatIconModule
-	],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    NgxEditorModule,
+    MatInputModule
+  ],
   providers: [
     CookieService,
     InterceptorProviders

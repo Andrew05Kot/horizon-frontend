@@ -1,0 +1,91 @@
+@import '../../../assets/css/mixins';
+
+.container {
+  @include background-grid();
+  padding-top: 90px;
+  display: flex;
+  justify-content: center;
+  color: #F2F4F8;
+
+  .edit-form {
+    max-width: 600px;
+
+    form {
+
+      .fields {
+        font-size: 14px;
+        font-weight: 600;
+
+        .name-field {
+          input {
+            width: 600px;
+            height: 37px;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 6px;
+            border: 1px solid #89A2B8;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          mat-error {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+
+        .description-field {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+
+          .description-label {
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          mat-form-field {
+            width: 100%;
+
+            input {
+              &.mat-input-element {
+                background-color: #fff;
+                border: 2px solid #dad3d3;
+                padding: 10px 0 9px 13px;
+                box-sizing: border-box;
+                width: 100%;
+                height: 60px;
+                color: red;
+                //@include with-heigth(100%, 40px);
+              }
+            }
+
+            textarea {
+              resize: vertical;
+
+              &.mat-input-element {
+                box-sizing: border-box;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        min-width: 100px;
+      }
+    }
+  }
+}
