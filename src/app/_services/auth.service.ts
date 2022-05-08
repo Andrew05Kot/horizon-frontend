@@ -34,7 +34,6 @@ export class AuthService {
       this.currentUserSubject.next(user);
       return user;
     }
-    console.log('this.currentUserSubject.getValue() >> ', this.currentUserSubject.getValue())
     return this.currentUserSubject.getValue();
   }
 

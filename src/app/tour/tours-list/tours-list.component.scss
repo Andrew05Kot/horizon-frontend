@@ -1,0 +1,47 @@
+@import '../../../assets/css/mixins';
+
+section {
+  display: inline-block;
+
+  .header {
+    text-align: center;
+
+    h1 {
+      color: #F2F4F8;
+      font-size: 50px;
+      line-height: 1.3em;
+      font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+  }
+
+  section {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .tours-row {
+      margin: 20px 0 30px;
+      display: grid;
+      width: 100%;
+      grid-column-gap: 48px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+
+      @media screen and (max-width: 1245px) {
+        grid-column-gap: 35px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      @media screen and (max-width: 953px) {
+        grid-column-gap: 24px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @media screen and (max-width: 670px) {
+        grid-column-gap: 24px;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+    }
+  }
+
+}

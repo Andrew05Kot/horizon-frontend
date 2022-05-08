@@ -1,0 +1,20 @@
+@mixin configure-card($width, $height, $mar-left, $mar-top, $unsetable, $element) {
+
+  #{$element}:nth-child(1n) {
+    width: $width;
+    height: $height;
+    margin-left: $mar-left;
+    margin-top: $mar-top;
+  }
+
+  //// Unset margin-top for first N elements in first row
+  //#{$element}:nth-child(-n + #{$unsetable}) {
+  //  margin-top: unset;
+  //}
+
+  // Unset margin left for first element in row
+  #{$element}:nth-child(#{$unsetable}n + 1) {
+    margin-left: unset;
+  }
+  @content;
+}

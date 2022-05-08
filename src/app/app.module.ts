@@ -15,6 +15,10 @@ import {HomeComponent} from './home/home.component';
 import {InterceptorProviders} from "./_interceptors/interceptor-providers";
 import {CookieService} from "ngx-cookie-service";
 import {MatMenuModule} from "@angular/material/menu";
+import { ToursListComponent } from './tour/tours-list/tours-list.component';
+import {MatCardModule} from "@angular/material/card";
+import { TourCardComponent } from './tour/tour-card/tour-card.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -23,18 +27,22 @@ import {MatMenuModule} from "@angular/material/menu";
     LoginPageComponent,
     BackgroundUrlPipe,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    ToursListComponent,
+    TourCardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatMenuModule
-  ],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatButtonModule,
+		HttpClientModule,
+		MatToolbarModule,
+		MatButtonModule,
+		MatMenuModule,
+		MatCardModule,
+		MatIconModule
+	],
   providers: [
     CookieService,
     InterceptorProviders

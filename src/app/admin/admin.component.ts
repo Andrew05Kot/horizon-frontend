@@ -4,11 +4,7 @@ import {User} from "../_models/user.model";
 import {Router} from "@angular/router";
 import {AuthService} from "../_services/auth.service";
 import {DisableScrollService} from "../_services/disable-scroll.service";
-
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
+import {SideNavToggle} from "../_models/side-nav-toggle.model";
 
 @Component({
   selector: 'app-admin',
@@ -48,9 +44,9 @@ export class AdminComponent implements OnInit {
   }
 
   getContentClass(): void {
-    if(this.isSideNavCollapsed && this.screenWidth > 768) {
+    if (this.isSideNavCollapsed && this.screenWidth > 768) {
       this.contentClass = 'content-trimmed';
-    } else if (this.isSideNavCollapsed && this.screenWidth <= 768 && this. screenWidth > 0) {
+    } else if (this.isSideNavCollapsed && this.screenWidth <= 768 && this.screenWidth > 0) {
       this.contentClass = 'content-md-screen'
     } else {
       this.contentClass = '';

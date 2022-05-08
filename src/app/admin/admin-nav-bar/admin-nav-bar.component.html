@@ -1,7 +1,7 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
   <div class="logo-container">
     <button class="logo" (click)="toggleCollapse()">H</button>
-    <div class="logo-text" @fadeInOut *ngIf="collapsed">Horizon</div>
+    <div class="logo-text" *ngIf="collapsed">Horizon</div>
     <button class="btn-close" *ngIf="collapsed" @rotate (click)="closeSidenav()">
       <mat-icon>close</mat-icon>
     </button>
@@ -11,9 +11,9 @@
       <a [routerLink]="[data.routerLink]"
          class="sidenav-nav-link"
          routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}">
+         [routerLinkActiveOptions]="{exact: true}">
         <mat-icon>{{data.icon}}</mat-icon>
-        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+        <span class="sidenav-link-text" *ngIf="collapsed">
           {{data.label}}
         </span>
       </a>

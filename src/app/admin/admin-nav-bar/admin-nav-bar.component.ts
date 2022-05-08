@@ -1,31 +1,13 @@
 import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import {navbarData} from "./nav-data";
 import {animate, keyframes, style, transition, trigger} from "@angular/animations";
-
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
+import {SideNavToggle} from "../../_models/side-nav-toggle.model";
 
 @Component({
   selector: 'app-admin-nav-bar',
   templateUrl: './admin-nav-bar.component.html',
   styleUrls: ['./admin-nav-bar.component.scss'],
   animations: [
-    trigger('fadeInOut', [
-      transition(':enter', [
-        style({opacity: 0}),
-        animate('350ms',
-          style({opacity: 1})
-        )
-      ]),
-      transition(':leave', [
-        style({opacity: 1}),
-        animate('350ms',
-          style({opacity: 0})
-        )
-      ])
-    ]),
     trigger('rotate', [
       transition(':enter', [
         animate('1000ms',
@@ -45,7 +27,8 @@ export class AdminNavBarComponent implements OnInit {
   screenWidth = 0;
   navData = navbarData;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
