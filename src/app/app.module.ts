@@ -15,15 +15,20 @@ import {HomeComponent} from './home/home.component';
 import {InterceptorProviders} from "./_interceptors/interceptor-providers";
 import {CookieService} from "ngx-cookie-service";
 import {MatMenuModule} from "@angular/material/menu";
-import { ToursListComponent } from './tour/tours-list/tours-list.component';
+import {ToursListComponent} from './tour/tours-list/tours-list.component';
 import {MatCardModule} from "@angular/material/card";
-import { TourCardComponent } from './tour/tour-card/tour-card.component';
+import {TourCardComponent} from './tour/tour-card/tour-card.component';
 import {MatIconModule} from "@angular/material/icon";
-import { TourEditPageComponent } from './tour/tour-edit-page/tour-edit-page.component';
+import {TourEditPageComponent} from './tour/tour-edit-page/tour-edit-page.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {NgxEditorModule} from "ngx-editor";
 import {MatInputModule} from "@angular/material/input";
+import {EditTourImagesComponent} from './tour/tour-edit-page/edit-tour-images/edit-tour-images.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {NgxFileDropModule} from "ngx-file-drop";
+import {TourInfoPageComponent} from './tour/tour-info-page/tour-info-page.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +40,9 @@ import {MatInputModule} from "@angular/material/input";
     HomeComponent,
     ToursListComponent,
     TourCardComponent,
-    TourEditPageComponent
+    TourEditPageComponent,
+    EditTourImagesComponent,
+    TourInfoPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,9 @@ import {MatInputModule} from "@angular/material/input";
     ReactiveFormsModule,
     MatFormFieldModule,
     NgxEditorModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule,
+    NgxFileDropModule,
   ],
   providers: [
     CookieService,

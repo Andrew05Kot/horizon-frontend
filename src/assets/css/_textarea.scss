@@ -17,14 +17,12 @@ mat-form-field {
   }
 
   textarea {
-
     &.mat-input-element {
-      color: black;
-      background-color: #fff;
-      border: 2px solid #DAD3D3;
+      color: antiquewhite;
+      border: 2px solid antiquewhite;
       border-radius: 5px;
-      min-height: 100px;
-      max-height: 175px !important;
+      min-height: 120px;
+      max-height: 205px !important;
       padding: 10px 20px 9px 13px;
     }
   }

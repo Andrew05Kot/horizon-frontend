@@ -39,3 +39,21 @@
     }
   }
 }
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin configure-font($f-size, $f-weight) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  @content;
+}
+
+@mixin image-box() {
+  @include width-height(100px, 100px);
+  border: 1px solid #89A2B8;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
