@@ -28,7 +28,7 @@ import {EditTourImagesComponent} from './tour/tour-edit-page/edit-tour-images/ed
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {NgxFileDropModule} from "ngx-file-drop";
 import {TourInfoPageComponent} from './tour/tour-info-page/tour-info-page.component';
-
+import {TourInfoImagesSliderComponent} from './tour/tour-info-page/tour-info-images-slider/tour-info-images-slider.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import {TourInfoPageComponent} from './tour/tour-info-page/tour-info-page.compon
     TourCardComponent,
     TourEditPageComponent,
     EditTourImagesComponent,
-    TourInfoPageComponent
+    TourInfoPageComponent,
+    TourInfoImagesSliderComponent
   ],
   imports: [
     BrowserModule,
