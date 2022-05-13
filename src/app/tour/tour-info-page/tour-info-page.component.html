@@ -1,5 +1,21 @@
 <div class="container">
-  <h1>
-    {{tour.name}}
-  </h1>
+  <div class="title-container">
+    <h1>
+      {{tour?.name}}
+    </h1>
+  </div>
+  <div class="slider"  [attr.outage-count]="'red'">
+    <div class="slide-track"
+         [style.width]="'calc(250px * ' + tour?.urls?.length +')'"
+         [style.keyframes.scroll.100%]="'translateX(-250px * ' + tour?.urls?.length/2 +')'">
+      <div class="slide" *ngFor="let url of tour?.urls">
+        <img [src]="url" alt="tour-image">
+      </div>
+    </div>
+  </div>
+  <div class="description-container">
+    <div class="description">
+      {{tour.description}}
+    </div>
+  </div>
 </div>

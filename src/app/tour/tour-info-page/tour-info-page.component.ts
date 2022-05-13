@@ -19,7 +19,8 @@ export class TourInfoPageComponent implements OnInit {
   ngOnInit(): void {
     this.tourId = this.activatedRoute.snapshot.params['id'];
     this.tourService.getById$(this.tourId).subscribe(response => {
-      this.tour = response;
+      this.tour = Tour.fromObject(response);
+      console.log('this.tour >> ', this.tour);
     });
   }
 

@@ -4,7 +4,9 @@
   </mat-card-header>
   <mat-card-content>
     <div class="content">
-      <div class="name">{{tour.name}}</div>
+      <div class="name">
+        <a href="{{'/tour/info/' + tour.id}}">{{tour.name}}</a>
+      </div>
       <div class="description">{{tour.description}}</div>
       <div class="bottom">
         <div class="rate-container">

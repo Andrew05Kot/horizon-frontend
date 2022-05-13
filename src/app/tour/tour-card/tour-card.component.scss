@@ -31,11 +31,15 @@ mat-card {
       margin-top: 15px;
 
       .name {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        font-size: 24px;
-        font-weight: 800;
+        a {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          font-size: 24px;
+          font-weight: 800;
+          text-decoration: none;
+          color: antiquewhite;
+        }
       }
 
       .description {

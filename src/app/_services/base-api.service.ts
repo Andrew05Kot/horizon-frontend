@@ -14,8 +14,7 @@ export abstract class BaseApiService<T> {
 
   apiPath: string;
 
-  constructor(public http: HttpClient,
-              public authService: AuthService) {
+  constructor(public http: HttpClient) {
     this.apiPath = environment.apiUrl + this.getApiName();
   }
 

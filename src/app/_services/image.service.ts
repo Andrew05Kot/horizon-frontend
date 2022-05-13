@@ -10,7 +10,7 @@ import {ImageModel} from "../_models/image.model";
 })
 export class ImageService {
 
-  static url = `${environment.apiUrl}/images`
+  static url = `${environment.apiUrl}/image`
 
   constructor(protected http: HttpClient) {
   }
