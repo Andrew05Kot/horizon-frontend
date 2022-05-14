@@ -20,9 +20,9 @@ export class TourService extends BaseApiService<Tour> {
     }
 
     let params = new HttpParams();
-    // if (imageIdsToRemove) {
-    //   params = params.append('imageIdsToRemove', imageIdsToRemove.join(","));
-    // }
+    if (imageIdsToRemove) {
+      params = params.append('imageIdsToRemove', imageIdsToRemove.join(","));
+    }
 
     return this.http.post<any>(this.apiPath + `/${tourId}/images`, formData,{params});
   }

@@ -29,10 +29,12 @@ export class EditTourImagesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('parent >> ', this.parentForm)
     const images = this.parentForm.get('images');
+    console.log('images ', images)
     if (images && images.value && images.value.length > 0) {
       this.selectedImage = images.value.map(image =>
-        new ImageView(image, ImageService.getImageLink(image)));
+        new ImageView(image, image));
     }
   }
 

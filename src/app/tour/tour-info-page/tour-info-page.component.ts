@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import {TourService} from "../../_services/tour.service";
 import {Tour} from "../../_models/tour.model";
 
@@ -14,7 +14,8 @@ export class TourInfoPageComponent implements OnInit {
   tour: Tour;
   urlsToSlider = [];
 
-  constructor(private tourService: TourService,
+  constructor(private router: Router,
+              private tourService: TourService,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,6 +24,12 @@ export class TourInfoPageComponent implements OnInit {
       this.tour = Tour.fromObject(response);
       this.urlsToSlider =  this.tour?.urls;
     });
+  }
+
+  edit(tourId: number): void {
+    this.router.navigate(['tour', 'edit', tourId]);
+    // this.router.navigateByUrl('tour/edit/' + tourId);
+    console.log('tourId >> ', tourId);
   }
 
 }

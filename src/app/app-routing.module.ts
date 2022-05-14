@@ -17,6 +17,9 @@ const routes: Routes = [
     path: 'tour/edit', component: TourEditPageComponent
   },
   {
+    path: 'tour/edit/:id', component: TourEditPageComponent
+  },
+  {
     path: 'tour/info/:id', component: TourInfoPageComponent
   },
   {

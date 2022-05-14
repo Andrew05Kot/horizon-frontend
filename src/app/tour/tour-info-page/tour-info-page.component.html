@@ -1,9 +1,15 @@
 <div class="container">
-  <div class="title-container">
-    <h1>
-      {{tour?.name}}
-    </h1>
+  <div class="header-container">
+    <div class="title">
+      <h1>
+        {{tour?.name}}
+      </h1>
+    </div>
+    <div class="edit-button" (click)="edit(tour.id)">
+      <button mat-flat-button color="accent">Редагувати</button>
+    </div>
   </div>
+
   <app-tour-info-images-slider [_images]="tour?.urls"></app-tour-info-images-slider>
 <!--  <div class="slider"  [attr.outage-count]="'red'">-->
 <!--    <div class="slide-track"-->

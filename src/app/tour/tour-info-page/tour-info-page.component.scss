@@ -3,18 +3,25 @@
 .container {
   padding-top: 60px;
 
-  .title-container {
+  .header-container {
     display: flex;
-    margin-top: 22px;
-    margin-left: 40px;
-    h1 {
-      @include configure-font(34px, 700);
-      color: antiquewhite;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 40px;
+
+    .title {
+      display: flex;
+
+      h1 {
+        @include configure-font(34px, 700);
+        color: antiquewhite;
+      }
     }
   }
 
   .description-container {
-    margin-top: 22px;
+    margin-top: 38px;
     margin-left: 40px;
     max-width: 800px;
     color: antiquewhite;

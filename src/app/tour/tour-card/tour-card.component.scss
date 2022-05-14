@@ -48,6 +48,8 @@ mat-card {
         text-align: start;
         margin-top: 15px;
         margin-left: 15px;
+        max-height: 140px;
+        overflow: hidden;
       }
 
       .bottom {
