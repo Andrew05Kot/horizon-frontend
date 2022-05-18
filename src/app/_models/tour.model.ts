@@ -1,12 +1,13 @@
 import { environment } from "../../environments/environment";
 import { ImageService } from "../_services/image.service";
+import { ImageModel } from "./image.model";
 
 export class Tour {
   constructor(public id?: number,
               public name?: string,
               public description?: string,
               public rate?: number,
-              public images?: string[],
+              public images?: ImageModel[],
               public urls?: string[]
   ) {
   }
@@ -18,7 +19,7 @@ export class Tour {
       model.description,
       model.rate,
       model.images,
-      model.images.map(image =>  ImageService.getImageLinkByName(image))
+      model.images.map(image =>  ImageService.getImageLinkByName(image.imageName))
     );
   }
 

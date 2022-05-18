@@ -29,6 +29,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {NgxFileDropModule} from "ngx-file-drop";
 import {TourInfoPageComponent} from './tour/tour-info-page/tour-info-page.component';
 import {TourInfoImagesSliderComponent} from './tour/tour-info-page/tour-info-images-slider/tour-info-images-slider.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {TourInfoImagesSliderComponent} from './tour/tour-info-page/tour-info-ima
     MatInputModule,
     MatProgressSpinnerModule,
     NgxFileDropModule,
+    CarouselModule
   ],
   providers: [
     CookieService,

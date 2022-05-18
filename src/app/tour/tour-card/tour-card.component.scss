@@ -1,5 +1,5 @@
 mat-card {
-  width: 320px;
+  width: 300px;
   height: 440px;
   padding: unset;
   border-radius: .7rem;
@@ -11,19 +11,30 @@ mat-card {
   flex-direction: column;
   overflow: hidden;
 
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
   mat-card-header {
-    img {
-      height: 200px;
+    height: 200px;
+
+    section {
+      position: relative;
+
+      img {
+        height: 200px;
+      }
     }
   }
 
   mat-card-content {
     height: 100%;
     color: antiquewhite;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    cursor: pointer;
 
     .content {
       width: 100%;
@@ -31,20 +42,17 @@ mat-card {
       margin-top: 15px;
 
       .name {
-        a {
-          display: flex;
-          justify-content: center;
-          text-align: center;
-          font-size: 24px;
-          font-weight: 800;
-          text-decoration: none;
-          color: antiquewhite;
-        }
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 800;
+        color: antiquewhite;
       }
 
       .description {
         display: flex;
-        width: 100%;
+        width: 90%;
         text-align: start;
         margin-top: 15px;
         margin-left: 15px;

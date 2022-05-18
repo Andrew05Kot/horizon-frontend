@@ -20,15 +20,15 @@ export class TourEditPageComponent implements OnInit {
               private formBuilder: FormBuilder,
               private tourService: TourService,
               private router: Router) {
+    this.checkIfEditMode();
   }
 
   ngOnInit(): void {
-    this.checkIfEditMode();
+
   }
 
   save(): void {
     const tour: Tour = this.tourForm.value;
-    console.log('this.tourForm.value >> ', this.tourForm.value)
     this.tourToEdit
       ? this.tourService.update$(this.tourToEdit.id, tour).subscribe(response => this.processSavedTour(response))
       : this.tourService.create$(tour).subscribe(response => this.processSavedTour(response));
@@ -36,10 +36,14 @@ export class TourEditPageComponent implements OnInit {
 
   checkIfEditMode(): void {
     const tourId = this.activatedRoute.snapshot.params['id'];
-    this.tourService.getById$(tourId).subscribe(response => {
-      this.tourToEdit = Tour.fromObject(response);
-      this.tourToEdit ? this.initEditingForm() : this.initCreatingForm();
-    });
+    if (tourId) {
+      this.tourService.getById$(tourId).subscribe(response => {
+        this.tourToEdit = Tour.fromObject(response);
+        this.initEditingForm();
+      });
+    } else {
+      this.initCreatingForm();
+    }
   }
 
   private processSavedTour(tourResponse: Tour): void {
@@ -47,7 +51,6 @@ export class TourEditPageComponent implements OnInit {
   }
 
   private updateImages(tourResponse: Tour): void {
-    console.log('BEFORE tourResponse >> ', tourResponse)
     const imagesToSave: File[] = this.tourForm.get('files').value;
     const imagesToRemove = this.tourForm.get('imagesToRemove').value;
     if (imagesToSave.length > 0 || imagesToRemove.length > 0) {
@@ -77,7 +80,7 @@ export class TourEditPageComponent implements OnInit {
         rate: new FormControl(80),
         files: [[]],
         imagesToRemove: [[]],
-        images: [this.getOrDefault(this.tourToEdit, "urls")],
+        images: [this.getOrDefault(this.tourToEdit, "images")],
       }
     );
   }

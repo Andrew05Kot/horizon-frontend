@@ -1,11 +1,19 @@
 <mat-card>
   <mat-card-header>
-    <img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTc2zTLzM0Al2juaoW5ZTHJEi9i0DQyCwwbPtcufhdaoUAEBs7tLXsquTrzEci8" alt="carpatian">
+    <section>
+      <owl-carousel-o [options]="customOptions" class="simple-carousel" #carousel>
+        <ng-container *ngFor="let imagePath of tour?.urls; let index = index">
+          <ng-template carouselSlide [id]="imagePath" [width]="300" height="300px">
+            <img [src]="imagePath" alt="carousel image" (click)="carousel.next()">
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </section>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content (click)="openInfo()">
     <div class="content">
       <div class="name">
-        <a href="{{'/tour/info/' + tour.id}}">{{tour.name}}</a>
+        {{tour.name}}
       </div>
       <div class="description">{{tour.description}}</div>
       <div class="bottom">

@@ -15,7 +15,7 @@
     </ngx-file-drop>
   </form>
   <div class="uploaded-images-container">
-    <div class="image-container" *ngFor="let image of selectedImage">
+    <div class="image-container" *ngFor="let image of selectedImages">
       <button (click)="removeImage(image)">X</button>
       <img alt="img" [src]="image.url" class="img-preview">
     </div>

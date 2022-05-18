@@ -16,7 +16,7 @@ export class EditTourImagesComponent implements OnInit {
 
   @Input() parentForm: FormGroup;
 
-  selectedImage: ImageView[] = [];
+  selectedImages: ImageView[] = [];
   files: File[] = new Array<File>();
   processedFilesToDisplay = [];
   imagesToRemove: ImageModel[] = [];
@@ -29,12 +29,11 @@ export class EditTourImagesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('parent >> ', this.parentForm)
     const images = this.parentForm.get('images');
-    console.log('images ', images)
     if (images && images.value && images.value.length > 0) {
-      this.selectedImage = images.value.map(image =>
-        new ImageView(image, image));
+      this.selectedImages = images.value.map(image => {
+        return new ImageView(image, ImageService.getImageLink(image))
+      });
     }
   }
 
@@ -97,9 +96,9 @@ export class EditTourImagesComponent implements OnInit {
 
   removeImage(image: ImageView): void {
     this.imagesToRemove.push(image.image);
-    const removeIndex = this.selectedImage.findIndex(item => item === image);
+    const removeIndex = this.selectedImages.findIndex(item => item === image);
     if (removeIndex !== -1) {
-      this.selectedImage.splice(removeIndex, 1);
+      this.selectedImages.splice(removeIndex, 1);
     }
     this.parentForm.patchValue({
       imagesToRemove: this.imagesToRemove
