@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "add": "^2.0.6",
+    "angular-responsive-carousel": "^2.1.2",
     "install": "^0.13.0",
     "ng": "^0.0.0",
     "ngx-cookie-service": "^13.2.0",

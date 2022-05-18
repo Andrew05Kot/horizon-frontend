@@ -9,17 +9,17 @@
       <button mat-flat-button color="accent">Редагувати</button>
     </div>
   </div>
-
-  <app-tour-info-images-slider [_images]="tour?.urls"></app-tour-info-images-slider>
-<!--  <div class="slider"  [attr.outage-count]="'red'">-->
-<!--    <div class="slide-track"-->
-<!--         [style.width]="'calc(250px * ' + tour?.urls?.length +')'"-->
-<!--         [style.keyframes.scroll.100%]="'translateX(-250px * ' + tour?.urls?.length/2 +')'">-->
-<!--      <div class="slide" *ngFor="let url of tour?.urls">-->
-<!--        <img [src]="url" alt="tour-image">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <div class="carousel-container">
+    <carousel *ngIf="tour?.urls?.length > 0"
+              [width]="carouselWidth"
+              [cellsToShow]="3"
+              [cellWidth]="300"
+              [transitionDuration]="500">
+      <div class="carousel-cell" *ngFor="let image of tour?.urls">
+        <img [src]="image">
+      </div>
+    </carousel>
+  </div>
   <div class="description-container">
     <div class="description">
       {{tour?.description}}
