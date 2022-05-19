@@ -14,8 +14,7 @@ export abstract class BaseApiService<T> {
 
   apiPath: string;
 
-  constructor(public http: HttpClient,
-              public authService: AuthService) {
+  constructor(public http: HttpClient) {
     this.apiPath = environment.apiUrl + this.getApiName();
   }
 
@@ -59,8 +58,8 @@ export abstract class BaseApiService<T> {
     return this.http.get<T>(this.apiPath + `/${id}`, {params: queryParams});
   }
 
-  update$(id: number, entity: T): Observable<void> {
-    return this.http.put<void>(this.apiPath + `/${id}`, entity);
+  update$(id: number, entity: T):  Observable<T> {
+    return this.http.put<T>(this.apiPath + `/${id}`, entity);
   }
 
   delete$(id: number): Observable<void> {

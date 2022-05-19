@@ -1,0 +1,91 @@
+@import '../../../../assets/css/mixins';
+
+@mixin image-box() {
+  @include width-height(150px, 150px);
+  border: 1px solid #89A2B8;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+section {
+  .form-group {
+    display: flex;
+    font-family: 'SF Pro Display', serif;
+    font-weight: 500;
+    letter-spacing: 0;
+
+    .select-images {
+      cursor: pointer;
+    }
+
+    .image-container {
+      @include image-box();
+      cursor: pointer;
+
+      .message {
+        margin-top: 45px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 0 5px;
+        color: #368CFD;
+      }
+
+      .browse-container {
+        text-align: center;
+        font-size: 15px;
+        line-height: 17px;
+        margin-top: 7px;
+        color: #368CFD;
+      }
+    }
+
+    .image-spinner-container {
+      @include image-box();
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .change-image-message {
+      height: fit-content;
+      margin-top: auto;
+      margin-left: 14px;
+      color: #368CFD;
+      font-size: 15px;
+      line-height: 17px;
+    }
+  }
+
+  .uploaded-images-container {
+    margin-top: 10px;
+    display: flex;
+    grid-gap: 10px 15px;
+    flex-wrap: wrap;
+
+    .image-container {
+      position: relative;
+
+      button {
+        position: absolute;
+        border: unset;
+        cursor: pointer;
+        right: 3px;
+        top: 3px;
+        color: #368CFD;
+        font-weight: 700;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        background-color: rgba(255, 255, 255, .6);
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        @include width-height(300px, 200px);
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<section>
+  <form class="form-group" [formGroup]="parentForm">
+
+    <ngx-file-drop dropZoneClassName="drop-zone"
+                   contentClassName="drop-zone-content"
+                   (onFileDrop)="onFileChange($event)">
+      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+        <div (click)="openFileSelector()" class="image-container"
+             *ngIf="!isImageInProcessing; else progressSpin">
+          <div class="message">
+            завантажити зображення
+          </div>
+        </div>
+      </ng-template>
+    </ngx-file-drop>
+  </form>
+  <div class="uploaded-images-container">
+    <div class="image-container" *ngFor="let image of selectedImages">
+      <button (click)="removeImage(image)">X</button>
+      <img alt="img" [src]="image.url" class="img-preview">
+    </div>
+
+    <div class="image-container" *ngFor="let file of processedFilesToDisplay">
+      <button (click)="removeUploadedFile(file)">X</button>
+      <img alt="img" [src]="file" class="img-preview">
+    </div>
+  </div>
+</section>
+
+<ng-template #progressSpin>
+  <div class="image-spinner-container">
+    <mat-progress-spinner mode="indeterminate" diameter="80">
+    </mat-progress-spinner>
+  </div>
+</ng-template>

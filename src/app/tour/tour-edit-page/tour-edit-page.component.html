@@ -1,0 +1,48 @@
+<div class="container" *ngIf="tourForm">
+  <div class="edit-form">
+    <form [formGroup]="tourForm">
+      <div class="fields">
+        <div class="field">
+          <label class="label">
+            Назва
+          </label>
+          <input type="text" formControlName="name" autocomplete="disabled" required="true">
+          <mat-error *ngIf="tourForm.hasError('required', 'name') && tourForm.get('name').touched">
+            назва туру є обов'язковою
+          </mat-error>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Опис
+          </label>
+          <mat-form-field>
+                        <textarea
+                          #description
+                          maxlength="1000"
+                          matInput
+                          formControlName="description"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="6"></textarea>
+            <mat-hint align="end">{{description.value.length}} / 500</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="field">
+          <label class="label">
+            Фото
+          </label>
+          <div class="image-cropper">
+            <app-edit-tour-images [parentForm]="tourForm"></app-edit-tour-images>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="button-row">
+      <div class="save">
+        <button mat-flat-button color="accent" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

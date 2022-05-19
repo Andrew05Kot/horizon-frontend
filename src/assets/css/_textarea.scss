@@ -1,0 +1,29 @@
+mat-form-field {
+
+  &.mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: unset;
+  }
+
+  .mat-form-field-infix {
+    padding: unset;
+  }
+
+  &.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1em;
+  }
+
+  textarea {
+    &.mat-input-element {
+      color: antiquewhite;
+      border: 2px solid antiquewhite;
+      border-radius: 5px;
+      min-height: 120px;
+      max-height: 205px !important;
+      padding: 10px 20px 9px 13px;
+    }
+  }
+}

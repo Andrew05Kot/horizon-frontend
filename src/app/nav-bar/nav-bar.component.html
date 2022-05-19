@@ -5,8 +5,8 @@
 
   <div class="spaces"></div>
 
-  <a mat-button routerLink="home">Home</a>
-  <a mat-button>Service</a>
+  <a mat-button routerLink="home">Головна</a>
+  <a mat-button routerLink="tour/edit">Створити</a>
   <a *ngIf="!currentUser" mat-button routerLink="login">Login</a>
   <a *ngIf="!currentUser" mat-button routerLink="registration">Registration</a>
 
@@ -19,7 +19,7 @@
   <mat-menu #menu="matMenu" xPosition="before"
             class="mat-elevation-z1 nav-dropdown">
     <button mat-menu-item (click)="logout()">
-      Logout
+      Вийти
     </button>
   </mat-menu>
 </div>
