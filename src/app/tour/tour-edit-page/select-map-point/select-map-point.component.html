@@ -1,0 +1,14 @@
+<section>
+  <div class="map"
+       id="map"
+       #map
+       leaflet
+       [leafletOptions]="options"
+       [leafletLayer]="marker"
+       (leafletMapReady)="onMapReady($event)"
+       (leafletZoomChange)="zoomChange($event)"
+       (leafletClick)="handleAddressChange($event)"
+  >
+  </div>
+
+</section>
