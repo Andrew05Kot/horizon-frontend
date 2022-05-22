@@ -33,7 +33,10 @@ import {
 } from './tour/tour-info-page/tour-info-images-slider/tour-info-images-slider.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { SelectMapPointComponent } from './tour/tour-edit-page/select-map-point/select-map-point.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { ViewMapComponent } from './tour/tour-info-page/view-map/view-map.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     TourEditPageComponent,
     EditTourImagesComponent,
     TourInfoPageComponent,
-    TourInfoImagesSliderComponent
+    TourInfoImagesSliderComponent,
+    SelectMapPointComponent,
+    ViewMapComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     MatProgressSpinnerModule,
     NgxFileDropModule,
     CarouselModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    LeafletModule,
+    MatDialogModule
   ],
   providers: [
     CookieService,

@@ -34,7 +34,7 @@ export class TourCardComponent implements OnInit {
 
   ngOnInit(): void {
     setInterval(() => {
-      this.carouselElement.next();
+      this.carouselElement?.next();
     }, (Math.floor(Math.random() * 4) + 1.5) * 1000);
   }
 

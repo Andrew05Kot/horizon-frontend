@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
 import { TourService } from "../../_services/tour.service";
 import { Tour } from "../../_models/tour.model";
 import { ActivatedRoute, Router } from "@angular/router";
+import { MatDialog } from "@angular/material/dialog";
+import { SelectMapPointComponent } from "./select-map-point/select-map-point.component";
 
 @Component({
   selector: 'app-tour-edit-page',
@@ -19,6 +21,7 @@ export class TourEditPageComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private formBuilder: FormBuilder,
               private tourService: TourService,
+              public dialog: MatDialog,
               private router: Router) {
     this.checkIfEditMode();
   }
@@ -46,6 +49,21 @@ export class TourEditPageComponent implements OnInit {
     }
   }
 
+  openSelectMapDialog(): void {
+    const dialogRef = this.dialog.open(SelectMapPointComponent, {
+      data: this.tourForm,
+      maxWidth: '750px',
+      maxHeight: '750px',
+      height: '100%',
+      width: '100%',
+      panelClass: 'map-point-dialog'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('this.tourForm.get(\'geoData\') ', this.tourForm.get('geoData'))
+    });
+  }
+
   private processSavedTour(tourResponse: Tour): void {
     this.updateImages(tourResponse);
   }
@@ -69,6 +87,7 @@ export class TourEditPageComponent implements OnInit {
         files: [[]],
         imagesToRemove: [[]],
         images: [[]],
+        geoData: new FormControl()
       }
     );
   }
@@ -81,6 +100,7 @@ export class TourEditPageComponent implements OnInit {
         files: [[]],
         imagesToRemove: [[]],
         images: [this.getOrDefault(this.tourToEdit, "images")],
+        geoData: new FormControl()
       }
     );
   }
