@@ -29,6 +29,13 @@
             <mat-hint align="end">{{description.value.length}} / 500</mat-hint>
           </mat-form-field>
         </div>
+
+        <div class="field">
+          <div class="open-map-button">
+            <button mat-flat-button color="accent" (click)="openSelectMapDialog()">Вибрати на мапі <mat-icon> map</mat-icon> </button>
+          </div>
+        </div>
+
         <div class="field">
           <label class="label">
             Фото
@@ -37,6 +44,7 @@
             <app-edit-tour-images [parentForm]="tourForm"></app-edit-tour-images>
           </div>
         </div>
+
       </div>
     </form>
     <div class="button-row">

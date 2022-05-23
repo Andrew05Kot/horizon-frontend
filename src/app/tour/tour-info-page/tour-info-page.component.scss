@@ -34,4 +34,26 @@
     align-items: center;
     width: 100%;
   }
+
+  .open-map-container {
+    position: fixed;
+    width: 170px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffd740;
+    color: rgba(0,0,0,.87);
+    z-index: 1;
+    top: 85%;
+    left: 46%;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+
+    mat-icon {
+      margin-left: 10px;
+    }
+  }
 }
