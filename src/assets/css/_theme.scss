@@ -3,3 +3,7 @@
 @import 'mat-dialog';
 @import 'textarea';
 @import 'map-styles';
+
+.carousel {
+  z-index: 1 !important;
+}

@@ -37,6 +37,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { SelectMapPointComponent } from './tour/tour-edit-page/select-map-point/select-map-point.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { ViewMapComponent } from './tour/tour-info-page/view-map/view-map.component';
+import { CustomPointMarkerComponent } from './tour/tour-info-page/view-map/custom-point-marker/custom-point-marker.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ViewMapComponent } from './tour/tour-info-page/view-map/view-map.compon
     TourInfoPageComponent,
     TourInfoImagesSliderComponent,
     SelectMapPointComponent,
-    ViewMapComponent
+    ViewMapComponent,
+    CustomPointMarkerComponent
   ],
   imports: [
     BrowserModule,
