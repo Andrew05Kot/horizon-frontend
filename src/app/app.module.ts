@@ -20,7 +20,7 @@ import { MatCardModule } from "@angular/material/card";
 import { TourCardComponent } from './tour/tour-card/tour-card.component';
 import { MatIconModule } from "@angular/material/icon";
 import { TourEditPageComponent } from './tour/tour-edit-page/tour-edit-page.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { NgxEditorModule } from "ngx-editor";
 import { MatInputModule } from "@angular/material/input";
@@ -38,6 +38,8 @@ import { SelectMapPointComponent } from './tour/tour-edit-page/select-map-point/
 import { MatDialogModule } from "@angular/material/dialog";
 import { ViewMapComponent } from './tour/tour-info-page/view-map/view-map.component';
 import { CustomPointMarkerComponent } from './tour/tour-info-page/view-map/custom-point-marker/custom-point-marker.component';
+import { DecisionDialogComponent } from './_components/decision-dialog/decision-dialog.component';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { CustomPointMarkerComponent } from './tour/tour-info-page/view-map/custo
     TourInfoImagesSliderComponent,
     SelectMapPointComponent,
     ViewMapComponent,
-    CustomPointMarkerComponent
+    CustomPointMarkerComponent,
+    DecisionDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,9 @@ import { CustomPointMarkerComponent } from './tour/tour-info-page/view-map/custo
     CarouselModule,
     IvyCarouselModule,
     LeafletModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [
     CookieService,

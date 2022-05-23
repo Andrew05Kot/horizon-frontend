@@ -5,8 +5,10 @@
         {{tour?.name}}
       </h1>
     </div>
-    <div class="edit-button" (click)="edit(tour.id)">
-      <button mat-flat-button color="accent">Редагувати</button>
+    {{currentUser?.id}}
+    <div *ngIf="tour?.owner?.id == currentUser?.id" class="action-buttons" >
+      <button (click)="edit(tour.id)" class="edit-button" mat-flat-button color="accent">Редагувати</button>
+      <button (click)="delete(tour)" class="delete-button"  mat-flat-button color="accent">Видалити</button>
     </div>
   </div>
   <div class="carousel-container">

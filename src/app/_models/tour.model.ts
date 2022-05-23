@@ -2,6 +2,7 @@ import { environment } from "../../environments/environment";
 import { ImageService } from "../_services/image.service";
 import { ImageModel } from "./image.model";
 import { GeoData } from "./geo-data.model";
+import { User } from "./user.model";
 
 export class Tour {
   constructor(public id?: number,
@@ -10,7 +11,8 @@ export class Tour {
               public rate?: number,
               public images?: ImageModel[],
               public urls?: string[],
-              public geoData?: GeoData
+              public geoData?: GeoData,
+              public owner?: User
   ) {
   }
 
@@ -23,6 +25,7 @@ export class Tour {
       model.images,
       model.images.map(image =>  ImageService.getImageLinkByName(image.imageName)),
       model.geoData? GeoData.fromObject(model.geoData) : null,
+      model.owner
     );
   }
 

@@ -1,0 +1,21 @@
+.mat-dialog-content,
+.mat-dialog-actions {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.confirmation-block {
+  mat-form-field {
+    width: 100%;
+    input {
+      height: 37px;
+      border: 1px solid #A7A6A8;
+      width: calc(100% - 12px);
+      padding: 0 5px;
+      margin-top: 10px;
+    }
+  }
+}
+
