@@ -24,6 +24,38 @@
         margin-left: 11px;
       }
     }
+
+    .owner-info {
+      display: flex;
+      cursor: pointer;
+
+      h2 {
+        @include configure-font(30px, 600);
+        color: antiquewhite;
+
+        &:hover {
+          color: #D6AD60;
+        }
+      }
+
+      .image {
+        margin-left: 15px;
+        img {
+          height: 41px;
+        }
+      }
+
+    }
+  }
+
+  .open-map-container {
+    margin-top: 38px;
+    margin-left: 40px;
+
+    button {
+      width: 200px;
+      height: 46px;
+    }
   }
 
   .description-container {
@@ -41,25 +73,37 @@
     width: 100%;
   }
 
-  .open-map-container {
+  .bottom-container {
+    @include center();
     position: fixed;
-    width: 170px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffd740;
-    color: rgba(0,0,0,.87);
+    color: rgba(0, 0, 0, .87);
     z-index: 1;
     top: 85%;
     left: 46%;
-    border-radius: 30px;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
 
-    mat-icon {
-      margin-left: 10px;
+    button {
+      @include configure-font(14px, 700);
+      @include width-height(210px, 60px);
+      border-radius: 30px;
+      background: #ffd740;
+      box-shadow: 0 3px 20px rgba(255, 255, 0, .09) !important;
+
+      img {
+        margin-left: 10px;
+        height: 40px;
+      }
+
+      &:hover {
+        @include width-height(225px, 68px);
+        @include configure-font(16px, 700);
+        margin-top: -4px;
+        margin-left: -7px;
+
+        img {
+          height: 44px;
+        }
+      }
     }
   }
 }

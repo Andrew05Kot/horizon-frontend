@@ -1,0 +1,27 @@
+@import '../../../assets/css/mixins';
+
+section {
+  padding: 20px;
+  width: 520px;
+  height: 700px;
+  @include configure-font(18px, 600);
+  @include center();
+  flex-direction: column;
+
+  .question {
+    @include width-height(100%, 50%);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .actions {
+    @include end();
+    @include width-height(100%, 50%);
+
+    button {
+      @include configure-font(13px, 600);
+      height: 44px;
+      width: 165px;
+    }
+  }
+}

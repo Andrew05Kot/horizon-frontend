@@ -42,6 +42,7 @@ import { DecisionDialogComponent } from './_components/decision-dialog/decision-
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { AllToursPageComponent } from './tour/all-tours-page/all-tours-page.component';
 import { PaginatorComponent } from './_components/paginator/paginator.component';
+import { ConfirmTourComponent } from './tour/confirm-tour/confirm-tour.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { PaginatorComponent } from './_components/paginator/paginator.component'
     CustomPointMarkerComponent,
     DecisionDialogComponent,
     AllToursPageComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    ConfirmTourComponent
   ],
   imports: [
     BrowserModule,

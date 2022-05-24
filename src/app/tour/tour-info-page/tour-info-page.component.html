@@ -5,10 +5,17 @@
         {{tour?.name}}
       </h1>
     </div>
-    {{currentUser?.id}}
-    <div *ngIf="tour?.owner?.id == currentUser?.id" class="action-buttons" >
+    <div *ngIf="isOwner" class="action-buttons">
       <button (click)="edit(tour.id)" class="edit-button" mat-flat-button color="accent">Редагувати</button>
       <button (click)="delete(tour)" class="delete-button"  mat-flat-button color="accent">Видалити</button>
+    </div>
+    <div *ngIf="!isOwner" class="owner-info">
+      <div class="name">
+        <h2>{{tour.owner.firstName}} {{tour.owner.lastName}}</h2>
+      </div>
+      <div class="image">
+        <img src="../../../assets/icons/tourist_inc.png" alt="user">
+      </div>
     </div>
   </div>
   <div class="carousel-container">
@@ -18,16 +25,23 @@
               [cellWidth]="300"
               [transitionDuration]="500">
       <div class="carousel-cell" *ngFor="let image of tour?.urls">
-        <img [src]="image">
+        <img [src]="image" alt="tour">
       </div>
     </carousel>
+  </div>
+  <div class="open-map-container">
+    <button mat-flat-button color="accent" (click)="openMap()">
+      Відкрити на мапі <mat-icon>map</mat-icon>
+    </button>
   </div>
   <div class="description-container">
     <div class="description">
       {{tour?.description}}
     </div>
   </div>
-  <div class="open-map-container" (click)="openMap()">
-    Відкрити на мапі <mat-icon>map</mat-icon>
+  <div class="bottom-container" *ngIf="!isOwner">
+    <button mat-flat-button color="accent" (click)="onGoTour()">
+      Піти в мандрівку <img src="assets/icons/go_tour_ic.png" alt="go">
+    </button>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { AuthService } from "../../_services/auth.service";
 import { EMPTY, switchMap } from "rxjs";
 import { SnackBarMessageService } from "../../_services/snack-bar-message.service";
 import { DecisionDialogComponent } from "../../_components/decision-dialog/decision-dialog.component";
+import { ConfirmTourComponent } from "../confirm-tour/confirm-tour.component";
 
 @Component({
   selector: 'app-tour-info-page',
@@ -22,6 +23,7 @@ export class TourInfoPageComponent implements OnInit {
   tour: Tour;
   carouselWidth: number;
   currentUser: User;
+  isOwner = false;
 
   constructor(private router: Router,
               private dialog: MatDialog,
@@ -37,6 +39,7 @@ export class TourInfoPageComponent implements OnInit {
     this.tourService.getById$(this.tourId).subscribe(response => {
       this.tour = Tour.fromObject(response);
       this.carouselWidth = this.tour.urls?.length > 2 ? 920 : 610;
+      this.isOwner = this.tour?.owner?.id === this.currentUser?.id;
     });
   }
 
@@ -54,6 +57,16 @@ export class TourInfoPageComponent implements OnInit {
   private afterDelete(tour: Tour): void {
     this.snackBarMessageService.showMessage(", було видалено ", tour.name);
     this.router.navigate(['home']);
+  }
+
+  onGoTour(): void {
+    const dialogRef =  this.dialog.open(ConfirmTourComponent, {
+      panelClass: 'confirm-tour-dialog',
+      data: this.tour
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('res >> ', result)
+    });
   }
 
   openMap(): void {
