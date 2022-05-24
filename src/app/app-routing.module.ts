@@ -7,6 +7,7 @@ import {TourEditPageComponent} from "./tour/tour-edit-page/tour-edit-page.compon
 import {TourInfoPageComponent} from "./tour/tour-info-page/tour-info-page.component";
 import { AllToursPageComponent } from "./tour/all-tours-page/all-tours-page.component";
 import { TourBookingsComponent } from "./tour/tour-bookings/tour-bookings.component";
+import { ProfileInfoPageComponent } from "./user/profile/profile-info-page/profile-info-page.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: 'tour/info/:id', component: TourInfoPageComponent
+  },
+  {
+    path: 'profile/info/:id', component: ProfileInfoPageComponent
   },
   {
     path: 'login', component: LoginPageComponent

@@ -1,0 +1,6 @@
+@import '../../../../assets/css/mixins';
+
+section {
+  padding-top: 60px;
+  @include background-grid();
+}

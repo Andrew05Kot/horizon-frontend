@@ -45,6 +45,8 @@ import { PaginatorComponent } from './_components/paginator/paginator.component'
 import { ConfirmTourComponent } from './tour/confirm-tour/confirm-tour.component';
 import { TourBookingsComponent } from './tour/tour-bookings/tour-bookings.component';
 import { TourBookingCardComponent } from './tour/tour-bookings/tour-booking-card/tour-booking-card.component';
+import { ProfileInfoPageComponent } from './user/profile/profile-info-page/profile-info-page.component';
+import { ProfileEditPageComponent } from './user/profile/profile-edit-page/profile-edit-page.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { TourBookingCardComponent } from './tour/tour-bookings/tour-booking-card
     PaginatorComponent,
     ConfirmTourComponent,
     TourBookingsComponent,
-    TourBookingCardComponent
+    TourBookingCardComponent,
+    ProfileInfoPageComponent,
+    ProfileEditPageComponent
   ],
   imports: [
     BrowserModule,
