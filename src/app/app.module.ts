@@ -43,6 +43,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { AllToursPageComponent } from './tour/all-tours-page/all-tours-page.component';
 import { PaginatorComponent } from './_components/paginator/paginator.component';
 import { ConfirmTourComponent } from './tour/confirm-tour/confirm-tour.component';
+import { TourBookingsComponent } from './tour/tour-bookings/tour-bookings.component';
+import { TourBookingCardComponent } from './tour/tour-bookings/tour-booking-card/tour-booking-card.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { ConfirmTourComponent } from './tour/confirm-tour/confirm-tour.component
     DecisionDialogComponent,
     AllToursPageComponent,
     PaginatorComponent,
-    ConfirmTourComponent
+    ConfirmTourComponent,
+    TourBookingsComponent,
+    TourBookingCardComponent
   ],
   imports: [
     BrowserModule,

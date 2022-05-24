@@ -1,0 +1,10 @@
+<div class="container">
+ <div class="header">
+   <h1>Запити користувачів</h1>
+ </div>
+  <div class="bookings-list">
+    <ng-container *ngFor="let booking of bookings">
+      <app-tour-booking-card [booking]="booking"></app-tour-booking-card>
+    </ng-container>
+  </div>
+</div>

@@ -45,6 +45,11 @@
   height: $height;
 }
 
+@mixin square($width) {
+  width: $width;
+  height: $width;
+}
+
 @mixin configure-font($f-size, $f-weight) {
   font-size: $f-size;
   font-weight: $f-weight;

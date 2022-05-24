@@ -6,10 +6,10 @@
   <div class="spaces"></div>
 
   <a mat-button routerLink="home">Головна</a>
-  <a mat-button routerLink="tours">Всі тури</a>
-  <a mat-button routerLink="tour/edit">Створити</a>
-  <a *ngIf="!currentUser" mat-button routerLink="login">Login</a>
-  <a *ngIf="!currentUser" mat-button routerLink="registration">Registration</a>
+  <a mat-button routerLink="tours">Всі мандрівки</a>
+  <a *ngIf="currentUser" mat-button routerLink="tour/edit">Створити</a>
+  <a *ngIf="currentUser" mat-button routerLink="requests">Запити</a>
+  <a *ngIf="!currentUser" mat-button routerLink="login">Увійти</a>
 
   <a *ngIf="currentUser"
      mat-button

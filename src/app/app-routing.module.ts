@@ -6,6 +6,7 @@ import {HomeComponent} from "./home/home.component";
 import {TourEditPageComponent} from "./tour/tour-edit-page/tour-edit-page.component";
 import {TourInfoPageComponent} from "./tour/tour-info-page/tour-info-page.component";
 import { AllToursPageComponent } from "./tour/all-tours-page/all-tours-page.component";
+import { TourBookingsComponent } from "./tour/tour-bookings/tour-bookings.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,9 @@ const routes: Routes = [
   },
   {
     path: 'auth', component: AuthComponent
+  },
+  {
+    path: 'requests', component: TourBookingsComponent
   },
   {
     path: 'admin',

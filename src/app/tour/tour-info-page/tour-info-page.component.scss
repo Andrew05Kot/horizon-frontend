@@ -2,6 +2,7 @@
 
 .container {
   padding-top: 60px;
+  @include background-grid();
 
   .header-container {
     display: flex;

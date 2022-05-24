@@ -9,6 +9,7 @@ export class User {
   public birthDate?: string;
   public role?: string;
   public email?: string;
+  public phoneNumber?: string;
   public language?: string;
   public photoUrl?: string; // does not exist in response and request
   public fullName?: string; // does not exist in response and request
