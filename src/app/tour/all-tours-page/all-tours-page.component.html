@@ -1,0 +1,27 @@
+<section>
+  <div class="tours">
+    <div class="label">
+      <h1>Усі мандрівки</h1>
+    </div>
+    <div class="toolbar">
+      <div class="searching">
+        <img src="assets/icons/ic_search.svg" alt="searching_icon">
+        <input type="text"
+               matInput
+               autocomplete="off"
+               [(ngModel)]="filter"
+               (keyup)="loadPageHandler(pageEvent)"
+               placeholder="Пошук по імені та опису">
+      </div>
+    </div>
+    <app-tours-list [_tours]="tours"></app-tours-list>
+    <div class="paging-container">
+      <div class="paginator" *ngIf="itemsTotal > 0">
+        <app-paginator [count]="itemsTotal" [pageSize]="pageSize" (pageInfo)="loadPageHandler($event)"></app-paginator>
+      </div>
+      <div class="not-found">
+        <h2 *ngIf="itemsTotal == 0">Нічого не знайдено :(</h2>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+@import '../../../assets/css/mixins';
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  button {
+    margin-left: 10px;
+    background-color: #ffd740;
+  }
+}

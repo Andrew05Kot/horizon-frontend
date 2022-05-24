@@ -49,7 +49,13 @@
     </form>
     <div class="button-row">
       <div class="save">
-        <button mat-flat-button color="accent" (click)="save()">Save</button>
+        <button
+          [disabled]="tourForm.invalid"
+          mat-flat-button
+          color="accent"
+          (click)="save()"
+        > Save
+        </button>
       </div>
     </div>
   </div>

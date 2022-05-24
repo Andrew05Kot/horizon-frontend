@@ -1,5 +1,6 @@
 import { Filter } from './model/filter-model';
 import {KeyValuePair} from "./model/key-value-pair.model";
+import { PageEvent } from "@angular/material/paginator";
 
 export class PagingUtils {
 
@@ -29,4 +30,17 @@ export class PagingUtils {
     return sortingValues.filter(field => field);
   }
 
+  static getDefaultPageEvent() {
+    const pageEvent = new PageEvent();
+    pageEvent.pageSize = 15;
+    pageEvent.pageIndex = 0;
+    return pageEvent;
+  }
+
+  static getPageEvent(pageSize: number, pageIndex: number) {
+    const pageEvent = new PageEvent();
+    pageEvent.pageSize = pageSize;
+    pageEvent.pageIndex = pageIndex;
+    return pageEvent;
+  }
 }

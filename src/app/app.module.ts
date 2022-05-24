@@ -40,6 +40,8 @@ import { ViewMapComponent } from './tour/tour-info-page/view-map/view-map.compon
 import { CustomPointMarkerComponent } from './tour/tour-info-page/view-map/custom-point-marker/custom-point-marker.component';
 import { DecisionDialogComponent } from './_components/decision-dialog/decision-dialog.component';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { AllToursPageComponent } from './tour/all-tours-page/all-tours-page.component';
+import { PaginatorComponent } from './_components/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     SelectMapPointComponent,
     ViewMapComponent,
     CustomPointMarkerComponent,
-    DecisionDialogComponent
+    DecisionDialogComponent,
+    AllToursPageComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

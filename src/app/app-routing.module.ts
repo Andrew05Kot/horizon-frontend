@@ -5,6 +5,7 @@ import {LoginPageComponent} from "./login/login-page/login-page.component";
 import {HomeComponent} from "./home/home.component";
 import {TourEditPageComponent} from "./tour/tour-edit-page/tour-edit-page.component";
 import {TourInfoPageComponent} from "./tour/tour-info-page/tour-info-page.component";
+import { AllToursPageComponent } from "./tour/all-tours-page/all-tours-page.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,9 @@ const routes: Routes = [
   },
   {
     path: 'home', component: HomeComponent
+  },
+  {
+    path: 'tours', component: AllToursPageComponent
   },
   {
     path: 'tour/edit', component: TourEditPageComponent

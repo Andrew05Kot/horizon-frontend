@@ -87,7 +87,7 @@ export class TourEditPageComponent implements OnInit {
         files: [[]],
         imagesToRemove: [[]],
         images: [[]],
-        geoData: new FormControl()
+        geoData: new FormControl(null, [Validators.required])
       }
     );
   }
@@ -100,7 +100,7 @@ export class TourEditPageComponent implements OnInit {
         files: [[]],
         imagesToRemove: [[]],
         images: [this.getOrDefault(this.tourToEdit, "images")],
-        geoData: new FormControl()
+        geoData: new FormControl(this.getOrDefault(this.tourToEdit, "geoData"), [Validators.required])
       }
     );
   }

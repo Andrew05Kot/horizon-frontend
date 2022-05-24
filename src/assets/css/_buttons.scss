@@ -1,0 +1,14 @@
+button {
+  &.mat-flat-button {
+    &.page-number {
+      &.mat-flat-button {
+        &.active {
+          &:not([class*='mat-elevation-z']) {
+            background-color: #D6AD60;
+            color: #d44a59;
+          }
+        }
+      }
+    }
+  }
+}
