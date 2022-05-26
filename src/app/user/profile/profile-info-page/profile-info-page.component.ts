@@ -13,15 +13,22 @@ export class ProfileInfoPageComponent implements OnInit {
 
   userId: number;
   currentUser: User;
+  user: User;
 
   constructor(private auth: AuthService,
               private userService: UserService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.currentUser = this.auth.getCurrentUser();
     this.userId = this.activatedRoute.snapshot.params['id'];
-    this.userService.getCurrentUser$()
+    this.userService.getById$(this.userId).subscribe(user => this.processUserResponse(user));
+  }
+
+  private processUserResponse(user: User): void {
+    this.user = user;
+    this.user.fullName = User.getUserFullName(user);
   }
 
 }

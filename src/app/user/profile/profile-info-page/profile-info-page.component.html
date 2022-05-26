@@ -1,11 +1,44 @@
-<section>
+<section *ngIf="user">
   <div class="header-block">
-
+    <mat-card>
+      <div class="content">
+        <div class="left">
+          <div class="hello-block">
+            <h1>
+              Привіт!
+            </h1>
+          </div>
+          <div class="name-block">
+            <div class="full-name">Мене звати, {{user.fullName}}</div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="user-avatar">
+            <img src="assets/icons/tourist_inc.png" alt="user_avatar">
+          </div>
+        </div>
+      </div>
+    </mat-card>
   </div>
 
-  <div class="about-block"></div>
+  <div class="about-block">
+    <mat-card>
+      <div class="content">
+        <div class="header-label">
+          Про мене
+        </div>
+        <div class="about-me-content">
+          {{user.aboutMe}}
+        </div>
+      </div>
+    </mat-card>
+  </div>
 
   <div class="history-block">
-
+    <mat-card>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsum nam obcaecati omnis sint. At dicta illum laudantium nihil possimus quo temporibus veniam. Aliquam architecto at blanditiis omnis pariatur sit.
+      </div>
+    </mat-card>
   </div>
 </section>

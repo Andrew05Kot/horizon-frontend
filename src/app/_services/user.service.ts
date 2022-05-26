@@ -14,6 +14,6 @@ export class UserService extends BaseApiService <User> {
   }
 
   getApiName(): string {
-    return 'user';
+    return '/user';
   }
 }
