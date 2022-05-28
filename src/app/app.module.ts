@@ -47,6 +47,7 @@ import { TourBookingsComponent } from './tour/tour-bookings/tour-bookings.compon
 import { TourBookingCardComponent } from './tour/tour-bookings/tour-booking-card/tour-booking-card.component';
 import { ProfileInfoPageComponent } from './user/profile/profile-info-page/profile-info-page.component';
 import { ProfileEditPageComponent } from './user/profile/profile-edit-page/profile-edit-page.component';
+import { ImageUploadComponent } from './_components/image-upload/image-upload.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { ProfileEditPageComponent } from './user/profile/profile-edit-page/profi
     TourBookingsComponent,
     TourBookingCardComponent,
     ProfileInfoPageComponent,
-    ProfileEditPageComponent
+    ProfileEditPageComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,

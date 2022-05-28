@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../../../_models/user.model";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "../../../_services/auth.service";
 import { UserService } from "../../../_services/user.service";
 
@@ -15,7 +15,8 @@ export class ProfileInfoPageComponent implements OnInit {
   currentUser: User;
   user: User;
 
-  constructor(private auth: AuthService,
+  constructor(private router: Router,
+              private auth: AuthService,
               private userService: UserService,
               private activatedRoute: ActivatedRoute) {
   }
@@ -24,6 +25,10 @@ export class ProfileInfoPageComponent implements OnInit {
     this.currentUser = this.auth.getCurrentUser();
     this.userId = this.activatedRoute.snapshot.params['id'];
     this.userService.getById$(this.userId).subscribe(user => this.processUserResponse(user));
+  }
+
+  goToEditProfile(): void {
+    this.router.navigate(['profile', 'edit', this.currentUser.id]);
   }
 
   private processUserResponse(user: User): void {

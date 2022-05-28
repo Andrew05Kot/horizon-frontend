@@ -8,6 +8,7 @@ import {TourInfoPageComponent} from "./tour/tour-info-page/tour-info-page.compon
 import { AllToursPageComponent } from "./tour/all-tours-page/all-tours-page.component";
 import { TourBookingsComponent } from "./tour/tour-bookings/tour-bookings.component";
 import { ProfileInfoPageComponent } from "./user/profile/profile-info-page/profile-info-page.component";
+import { ProfileEditPageComponent } from "./user/profile/profile-edit-page/profile-edit-page.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: 'profile/info/:id', component: ProfileInfoPageComponent
+  },
+  {
+    path: 'profile/edit/:id', component: ProfileEditPageComponent
   },
   {
     path: 'login', component: LoginPageComponent

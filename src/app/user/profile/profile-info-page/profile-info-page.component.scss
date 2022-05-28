@@ -57,6 +57,10 @@ section {
           flex-direction: column;
           justify-content: center;
         }
+
+        .edit-block {
+          margin-top: 18px;
+        }
       }
 
       .right {
@@ -102,9 +106,17 @@ section {
     @include block();
 
     mat-card {
-      .content {
+     .content {
+       display: flex;
+       flex-direction: column;
+       width: 100%;
 
-      }
+       .header-label {
+         padding: 10px;
+         margin-left: 5px;
+         @include configure-font(28px, 600);
+       }
+     }
     }
   }
 

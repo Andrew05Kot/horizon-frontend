@@ -11,6 +11,9 @@
           <div class="name-block">
             <div class="full-name">Мене звати, {{user.fullName}}</div>
           </div>
+          <div class="edit-block" *ngIf="user.id == currentUser.id">
+            <button mat-flat-button color="accent" (click)="goToEditProfile()" >Редагувати профіль</button>
+          </div>
         </div>
         <div class="right">
           <div class="user-avatar">
@@ -37,6 +40,9 @@
   <div class="history-block">
     <mat-card>
       <div class="content">
+        <div class="header-label">
+          Історія мандрівок
+        </div>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsum nam obcaecati omnis sint. At dicta illum laudantium nihil possimus quo temporibus veniam. Aliquam architecto at blanditiis omnis pariatur sit.
       </div>
     </mat-card>

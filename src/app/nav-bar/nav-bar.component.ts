@@ -11,10 +11,12 @@ export class NavBarComponent implements OnInit {
 
   user: any;
   currentUser: User;
+  profileLink: string;
 
   constructor(private authService: AuthService) {
     this.authService.currentUserSubject.subscribe((currentUser => {
       this.currentUser = currentUser;
+      this.profileLink = `profile/info/${currentUser.id}`;
     }));
   }
 
@@ -24,6 +26,7 @@ export class NavBarComponent implements OnInit {
 
   initCurrentUser(): void {
     this.currentUser = this.authService.getCurrentUser();
+    this.profileLink = `profile/info/${this.currentUser.id}`;
   }
 
   public logout(): void {

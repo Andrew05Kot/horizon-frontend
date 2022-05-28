@@ -1,1 +1,83 @@
-<p>profile-edit-page works!</p>
+<section *ngIf="currentUser">
+  <div class="page-container">
+    <div class="left-part">
+      <div class="avatar-block">
+        <app-image-upload
+          (imageEmitter)="catchMainImage($event)"
+          (imageInProcessingEmitter)="imageInProcessingEmitter.emit($event)"
+        >
+        </app-image-upload>
+      </div>
+    </div>
+    <div class="right-part">
+      <div class="user-form">
+        <form [formGroup]="userForm">
+          <div class="fields">
+            <div class="field">
+              <label class="label">
+                Ім'я
+              </label>
+              <input type="text" formControlName="firstName" autocomplete="disabled" required="true">
+              <mat-error *ngIf="userForm.hasError('required', 'firstName') && userForm.get('firstName').touched">
+                Ім'я є обов'язковим
+              </mat-error>
+            </div>
+
+            <div class="field">
+              <label class="label">
+                Прізвище
+              </label>
+              <input type="text" formControlName="lastName" autocomplete="disabled" required="true">
+              <mat-error *ngIf="userForm.hasError('required', 'lastName') && userForm.get('lastName').touched">
+                Прізвище є обов'язковим
+              </mat-error>
+            </div>
+
+            <div class="field">
+              <label class="label">
+                Номер телефону
+              </label>
+              <input type="tel" formControlName="phoneNumber" autocomplete="disabled" required="true">
+              <mat-error *ngIf="userForm.hasError('required', 'phoneNumber') && userForm.get('phoneNumber').touched">
+                Номер телефону є обов'язковим
+              </mat-error>
+            </div>
+
+            <div class="field">
+              <label class="label">
+                Про мене
+              </label>
+              <mat-form-field>
+                        <textarea
+                          #aboutMe
+                          maxlength="5000"
+                          matInput
+                          formControlName="aboutMe"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="6"></textarea>
+                <mat-hint align="end">{{aboutMe.value.length}} / 5000</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="buttons-row">
+    <div class="cancel">
+      <button mat-flat-button color="warn" (click)="cancel()">
+        Скасувати
+      </button>
+    </div>
+    <div class="submit">
+      <button mat-flat-button
+              color="accent"
+              (click)="save()"
+              [disabled]="userForm.invalid">
+        Зберегти
+      </button>
+    </div>
+  </div>
+</section>

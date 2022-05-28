@@ -5,12 +5,24 @@
       background: rgba(255, 255, 255, 0.1) ;
 
       button {
+        text-align: center;
         font-size: 18px;
         font-weight: 700;
         color: antiquewhite;
       }
 
       button:hover {
+        background-color: black;
+      }
+
+      a {
+        width: 150px;
+        font-size: 18px;
+        font-weight: 700;
+        color: antiquewhite;
+      }
+
+      a:hover {
         background-color: black;
       }
     }

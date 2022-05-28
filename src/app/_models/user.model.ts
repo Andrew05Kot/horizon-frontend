@@ -1,4 +1,5 @@
 import {Photo} from "./photo.model";
+import { ImageModel } from "./image.model";
 
 export class User {
   public id: number;
@@ -14,6 +15,7 @@ export class User {
   public language?: string;
   public photoUrl?: string; // does not exist in response and request
   public fullName?: string; // does not exist in response and request
+  public image?: ImageModel
 
   constructor(init?: Partial<User>) {
     Object.assign(this, init);
