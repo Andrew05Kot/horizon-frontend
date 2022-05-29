@@ -50,6 +50,14 @@ import { ProfileEditPageComponent } from './user/profile/profile-edit-page/profi
 import { ImageUploadComponent } from './_components/image-upload/image-upload.component';
 import { MyHistoryComponent } from './my-history/my-history.component';
 import { MyBookingHistoryCardComponent } from './my-history/my-booking-history-card/my-booking-history-card.component';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule
+} from '@angular-material-components/datetime-picker';
+import { UserCardComponent } from './home/user-card/user-card.component';
+
 
 @NgModule({
   declarations: [
@@ -78,7 +86,8 @@ import { MyBookingHistoryCardComponent } from './my-history/my-booking-history-c
     ProfileEditPageComponent,
     ImageUploadComponent,
     MyHistoryComponent,
-    MyBookingHistoryCardComponent
+    MyBookingHistoryCardComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
@@ -102,7 +111,11 @@ import { MyBookingHistoryCardComponent } from './my-history/my-booking-history-c
     LeafletModule,
     MatDialogModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule
   ],
   providers: [
     CookieService,

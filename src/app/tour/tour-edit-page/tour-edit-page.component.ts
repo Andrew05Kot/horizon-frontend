@@ -17,7 +17,7 @@ export class TourEditPageComponent implements OnInit {
   tourToEdit: Tour;
 
   maxLength = 10000;
-
+  myDatePicker
   constructor(private activatedRoute: ActivatedRoute,
               private formBuilder: FormBuilder,
               private tourService: TourService,
@@ -84,6 +84,7 @@ export class TourEditPageComponent implements OnInit {
         name: new FormControl('', [Validators.required]),
         description: new FormControl('', [Validators.required]),
         rate: new FormControl(80),
+        eventDate: new FormControl(null),
         files: [[]],
         imagesToRemove: [[]],
         images: [[]],
@@ -97,6 +98,7 @@ export class TourEditPageComponent implements OnInit {
         name: new FormControl(this.tourToEdit?.name, [Validators.required]),
         description: new FormControl(this.tourToEdit?.description, [Validators.required]),
         rate: new FormControl(80),
+        eventDate: new FormControl(null),
         files: [[]],
         imagesToRemove: [[]],
         images: [this.getOrDefault(this.tourToEdit, "images")],

@@ -43,10 +43,18 @@ $form-width: 615px;
             &:focus {
               outline: none;
             }
+
+            &.date-time {
+              width: 200px;
+            }
           }
 
           mat-form-field {
             width: 100%;
+
+            &.date-time {
+              width: 200px;
+            }
 
             input {
               &.mat-input-element {
@@ -76,11 +84,16 @@ $form-width: 615px;
               background-color: darkgrey;
               outline: 1px solid slategrey;
             }
+
+            img {
+              &.picker-icon {
+                @include square(40px);
+              }
+            }
           }
 
           mat-error {
-            font-size: 18px;
-            font-weight: 500;
+            @include configure-font(18px, 500);
           }
 
           .image-cropper {

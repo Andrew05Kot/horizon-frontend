@@ -41,6 +41,7 @@
 
       .image {
         margin-left: 15px;
+
         img {
           height: 41px;
         }
@@ -56,6 +57,19 @@
     button {
       width: 200px;
       height: 46px;
+    }
+  }
+
+  .datetime-container {
+    display: flex;
+    align-items: center;
+    margin-top: 38px;
+    margin-left: 40px;
+    @include configure-font(19px, 500);
+    color: antiquewhite;
+
+    .event-date {
+      margin-left: 10px;
     }
   }
 

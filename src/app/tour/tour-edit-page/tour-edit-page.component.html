@@ -6,10 +6,19 @@
           <label class="label">
             Назва
           </label>
-          <input type="text" formControlName="name" autocomplete="disabled" required="true">
+          <input class="field-input" type="text" formControlName="name" autocomplete="disabled" required="true">
           <mat-error *ngIf="tourForm.hasError('required', 'name') && tourForm.get('name').touched">
             назва мандрівки є обов'язковою
           </mat-error>
+        </div>
+
+        <div class="field">
+          <label>Дата та час проведення</label>
+          <mat-form-field class="date-time">
+            <input class="date-time" formControlName="eventDate" matInput [ngxMatDatetimePicker]="picker" [(ngModel)]="myDatePicker">
+            <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+          </mat-form-field>
         </div>
 
         <div class="field">
