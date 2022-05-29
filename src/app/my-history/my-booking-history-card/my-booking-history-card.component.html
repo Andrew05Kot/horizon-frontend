@@ -1,0 +1,27 @@
+<mat-card>
+  <div class="content">
+    <div class="left-part">
+      <div class="picture">
+        <img [src]="imageLink" alt="tour">
+      </div>
+      <div class="info">
+        <div class="tour-info">
+          <span class="tour-name" (click)="openTour()">
+            {{booking.tour.name}}
+          </span>
+        </div>
+        <div class="additional-info">
+          06.06.2022
+          <span class="owner" (click)="openOwnerProfile()">
+            {{booking?.tour?.owner?.firstName}} {{booking?.tour?.owner?.lastName}} ({{booking?.tour?.owner?.phoneNumber}})
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="right-part">
+      <div class="status">
+        {{convertedStatus}}
+      </div>
+    </div>
+  </div>
+</mat-card>

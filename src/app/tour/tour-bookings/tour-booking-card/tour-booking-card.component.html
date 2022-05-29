@@ -18,13 +18,17 @@
     </div>
     <div class="right-part">
 <!--    TODO ADD  *ngIf="booking.status == 'PENDING'"-->
-      <div class="actions">
+      <div class="actions" *ngIf="booking.status == 'PENDING'">
         <div class="reject">
-          <button mat-flat-button color="primary">Відмовити</button>
+          <button mat-flat-button color="primary" (click)="reject()">Відмовити</button>
         </div>
         <div class="accept">
-          <button mat-flat-button color="accent">Прийняти</button>
+          <button mat-flat-button color="accent" (click)="accept()">Прийняти</button>
         </div>
+      </div>
+
+      <div class="status" *ngIf="booking.status != 'PENDING'">
+        {{convertedStatus}}
       </div>
     </div>
   </div>

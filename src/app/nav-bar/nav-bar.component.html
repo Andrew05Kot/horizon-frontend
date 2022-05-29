@@ -9,6 +9,7 @@
   <a mat-button routerLink="tours">Всі мандрівки</a>
   <a *ngIf="currentUser" mat-button routerLink="tour/edit">Створити</a>
   <a *ngIf="currentUser" mat-button routerLink="requests">Запити</a>
+  <a *ngIf="currentUser" mat-button routerLink="my-history">Історія</a>
   <a *ngIf="!currentUser" mat-button routerLink="login">Увійти</a>
 
   <a *ngIf="currentUser"

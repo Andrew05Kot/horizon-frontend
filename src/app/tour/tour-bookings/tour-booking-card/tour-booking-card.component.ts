@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Booking } from "../../../_models/booking.model";
 import { Router } from "@angular/router";
+import { BookingService } from "../../../_services/booking.service";
+import { BookingStatus } from "../../../_constants/booking-status.constants";
 
 @Component({
   selector: 'app-tour-booking-card',
@@ -10,10 +12,14 @@ import { Router } from "@angular/router";
 export class TourBookingCardComponent implements OnInit {
 
   @Input() booking: Booking;
+  convertedStatus: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private bookingService: BookingService) {
+  }
 
   ngOnInit(): void {
+    this.convertStatus(this.booking?.status.toString());
   }
 
   openTour(): void {
@@ -21,7 +27,40 @@ export class TourBookingCardComponent implements OnInit {
   }
 
   openTouristProfile(): void {
-
+    this.router.navigate(['profile', 'info', this.booking?.tourist?.id]);
   }
 
+  reject(): void {
+    this.updateBookingStatus(this.booking, BookingStatus.REJECTED);
+  }
+
+  accept(): void {
+    this.updateBookingStatus(this.booking, BookingStatus.ACCEPTED);
+  }
+
+  private updateBookingStatus(booking: Booking, status: BookingStatus): void {
+    const bookingToUpdate = booking;
+    bookingToUpdate.tourId = booking.tour?.id;
+    bookingToUpdate.touristId = booking.tourist?.id;
+    this.booking.status = status;
+    this.bookingService.update$(bookingToUpdate?.id, bookingToUpdate).subscribe(response => {
+      this.booking = response;
+      this.convertStatus(this.booking?.status.toString());
+    });
+  }
+
+  private convertStatus(status: string): void {
+    if (status == BookingStatus.PENDING) {
+      this.convertedStatus = 'В очікуванні';
+    }
+    if (status == BookingStatus.ACCEPTED) {
+      this.convertedStatus = 'Прийнято';
+    }
+    if (status == BookingStatus.REJECTED) {
+      this.convertedStatus = 'Відмовлено';
+    }
+    if (status == BookingStatus.DONE) {
+      this.convertedStatus = 'Відбувся';
+    }
+  }
 }

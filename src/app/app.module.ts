@@ -48,6 +48,8 @@ import { TourBookingCardComponent } from './tour/tour-bookings/tour-booking-card
 import { ProfileInfoPageComponent } from './user/profile/profile-info-page/profile-info-page.component';
 import { ProfileEditPageComponent } from './user/profile/profile-edit-page/profile-edit-page.component';
 import { ImageUploadComponent } from './_components/image-upload/image-upload.component';
+import { MyHistoryComponent } from './my-history/my-history.component';
+import { MyBookingHistoryCardComponent } from './my-history/my-booking-history-card/my-booking-history-card.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { ImageUploadComponent } from './_components/image-upload/image-upload.co
     TourBookingCardComponent,
     ProfileInfoPageComponent,
     ProfileEditPageComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    MyHistoryComponent,
+    MyBookingHistoryCardComponent
   ],
   imports: [
     BrowserModule,

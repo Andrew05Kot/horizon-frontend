@@ -10,7 +10,7 @@ import { TourService } from "../_services/tour.service";
 export class HomeComponent {
 
   tours: Tour[] = [];
-  pageSize: number = 12;
+  pageSize: number = 8;
   currentSortDirection = 'DESC';
 
   constructor(private tourService: TourService) {

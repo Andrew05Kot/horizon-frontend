@@ -50,6 +50,30 @@ export abstract class BaseApiService<T> {
     return this.http.get<Page<T>>(this.apiPath, {params: queryParams});
   }
 
+  getList$( sortOptions?: string[], filters?: Filter[], expandFields?: string): Observable<Page<T>> {
+    let queryParams = new HttpParams();
+
+    if (filters && filters !== undefined) {
+      for (const filter of filters) {
+        if (filter.key && filter.operation && filter.value) {
+          queryParams = queryParams.append('search', PagingUtils.getFilterValue(filter));
+        }
+      }
+    }
+
+    if (sortOptions && sortOptions !== undefined) {
+      for (const sortOption of sortOptions) {
+        queryParams = queryParams.append('sort', sortOption);
+      }
+    }
+
+    if (expandFields && expandFields !== undefined) {
+      queryParams = queryParams.append('expand', expandFields);
+    }
+
+    return this.http.get<Page<T>>(this.apiPath + '/unpaged', {params: queryParams});
+  }
+
   getById$(id: number, expandField?: string): Observable<T> {
     let queryParams = new HttpParams();
     if (expandField && expandField !== undefined) {

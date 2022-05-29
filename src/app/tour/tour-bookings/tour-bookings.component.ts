@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingService } from "../../_services/booking.service";
 import { Booking } from "../../_models/booking.model";
+import { Filter } from "../../_utils/model/filter-model";
+import { FilteringOperation } from "../../_constants/filtering-operations.constants";
+import { User } from "../../_models/user.model";
+import { AuthService } from "../../_services/auth.service";
 
 @Component({
   selector: 'app-tour-bookings',
@@ -10,15 +14,24 @@ import { Booking } from "../../_models/booking.model";
 export class TourBookingsComponent implements OnInit {
 
   bookings: Booking[] = [];
+  currentUser: User;
 
-  constructor(private bookingService: BookingService) {
+  constructor(private auth: AuthService,
+              private bookingService: BookingService) {
   }
 
   ngOnInit(): void {
-    this.bookingService.getPage$(0, 30, [], []).subscribe((responsePage) => {
+    this.currentUser = this.auth.getCurrentUser();
+    this.bookingService.getList$([], this.buildFilters()).subscribe((responsePage) => {
       this.bookings = responsePage.items;
-      console.log('this.booking >> ', this.bookings)
     });
+  }
+
+  private buildFilters(): Filter[] {
+    const filters = [
+      new Filter('owner', FilteringOperation.EQUAL, this.currentUser?.id.toString())
+    ];
+    return filters;
   }
 
 

@@ -36,6 +36,10 @@ export class TourInfoPageComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this.auth.getCurrentUser();
     this.tourId = this.activatedRoute.snapshot.params['id'];
+    this.initTour();
+  }
+
+  private initTour(): void {
     this.tourService.getById$(this.tourId).subscribe(response => {
       this.tour = Tour.fromObject(response);
       this.carouselWidth = this.tour.urls?.length > 2 ? 920 : 610;
@@ -65,7 +69,7 @@ export class TourInfoPageComponent implements OnInit {
       data: this.tour
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('res >> ', result)
+      this.initTour();
     });
   }
 
@@ -80,6 +84,10 @@ export class TourInfoPageComponent implements OnInit {
       console.log('The dialog was closed');
       // this.tourForm = t;
     });
+  }
+
+  goToUserProfilePage(): void {
+    this.router.navigate(['profile', 'info', this.tour.owner.id]);
   }
 
 }

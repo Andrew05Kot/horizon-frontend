@@ -9,6 +9,7 @@ import { AllToursPageComponent } from "./tour/all-tours-page/all-tours-page.comp
 import { TourBookingsComponent } from "./tour/tour-bookings/tour-bookings.component";
 import { ProfileInfoPageComponent } from "./user/profile/profile-info-page/profile-info-page.component";
 import { ProfileEditPageComponent } from "./user/profile/profile-edit-page/profile-edit-page.component";
+import { MyHistoryComponent } from "./my-history/my-history.component";
 
 const routes: Routes = [
   {
@@ -43,6 +44,9 @@ const routes: Routes = [
   },
   {
     path: 'requests', component: TourBookingsComponent
+  },
+  {
+    path: 'my-history', component: MyHistoryComponent
   },
   {
     path: 'admin',
