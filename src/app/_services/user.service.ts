@@ -13,6 +13,18 @@ export class UserService extends BaseApiService <User> {
     return this.http.get<User>(this.apiPath + '/current');
   }
 
+  saveImage(image: File): Observable<User> {
+    const formData: FormData = new FormData();
+    if (image) {
+      formData.append('imageFile', image, image?.name)
+    }
+    return this.http.post<any>(this.apiPath + `/images`, formData);
+  }
+
+  deleteImage(imageId): Observable<User> {
+    return this.http.delete<any>(this.apiPath + `/images/${imageId}`);
+  }
+
   getApiName(): string {
     return '/user';
   }

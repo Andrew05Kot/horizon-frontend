@@ -3,6 +3,7 @@
     <div class="left-part">
       <div class="avatar-block">
         <app-image-upload
+          [_initedImageSrc]="initImage"
           (imageEmitter)="catchMainImage($event)"
           (imageInProcessingEmitter)="imageInProcessingEmitter.emit($event)"
         >

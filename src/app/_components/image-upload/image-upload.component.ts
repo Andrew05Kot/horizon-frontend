@@ -11,7 +11,9 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export class ImageUploadComponent implements OnInit {
 
-  @Input() initedImageSrc: string;
+  @Input() set _initedImageSrc(value: string) {
+    this.initedImageSrc = value;
+  }
   @Input() loadedImage: string = null;
   @Input() supportedFormats: string[] = ['image/jpeg', 'image/png'];
   @Input() supportedFormatsForView: string = 'jpg, png';
@@ -20,6 +22,7 @@ export class ImageUploadComponent implements OnInit {
   uploadedFile: File;
   inProcess = false;
   supportedFormatsForProcessing = ['image/jpeg', 'image/png'];
+  initedImageSrc: string;
 
   constructor(
     private imageCropAndCompressService: ImageCropAndCompressService,

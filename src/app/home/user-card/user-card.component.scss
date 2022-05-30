@@ -17,6 +17,7 @@
 
   .image {
     img {
+      border-radius: 50%;
       @include square(200px);
     }
   }

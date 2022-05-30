@@ -3,6 +3,7 @@ import { User } from "../../../_models/user.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "../../../_services/auth.service";
 import { UserService } from "../../../_services/user.service";
+import { ImageService } from "../../../_services/image.service";
 
 @Component({
   selector: 'app-profile-info-page',
@@ -14,6 +15,7 @@ export class ProfileInfoPageComponent implements OnInit {
   userId: number;
   currentUser: User;
   user: User;
+  avatarUrl : string;
 
   constructor(private router: Router,
               private auth: AuthService,
@@ -34,6 +36,7 @@ export class ProfileInfoPageComponent implements OnInit {
   private processUserResponse(user: User): void {
     this.user = user;
     this.user.fullName = User.getUserFullName(user);
+    this.user.image.link = this.user.image ? ImageService.getImageLinkByName(this.user.image.imageName) : 'assets/icons/tourist_inc.png';
   }
 
 }

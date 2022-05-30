@@ -19,6 +19,7 @@ export class User {
 
   constructor(init?: Partial<User>) {
     Object.assign(this, init);
+    this.image = this.image ? ImageModel.fromObject(this.image) : this.image;
   }
 
   static getUserFullName(user: User): string {
