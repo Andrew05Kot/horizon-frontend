@@ -3,6 +3,7 @@ import { Booking } from "../../../_models/booking.model";
 import { Router } from "@angular/router";
 import { BookingService } from "../../../_services/booking.service";
 import { BookingStatus } from "../../../_constants/booking-status.constants";
+import { ImageService } from "../../../_services/image.service";
 
 @Component({
   selector: 'app-tour-booking-card',
@@ -13,6 +14,7 @@ export class TourBookingCardComponent implements OnInit {
 
   @Input() booking: Booking;
   convertedStatus: string;
+  touristImageLink: string = null;
 
   constructor(private router: Router,
               private bookingService: BookingService) {
@@ -20,6 +22,9 @@ export class TourBookingCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.convertStatus(this.booking?.status.toString());
+    this.touristImageLink = this.booking?.tourist?.image
+      ? ImageService.getImageLinkByName(this.booking?.tourist?.image?.imageName)
+      : '../../../../assets/icons/tourist_inc.png';
   }
 
   openTour(): void {

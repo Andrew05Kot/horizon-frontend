@@ -16,6 +16,7 @@ export class User {
   public photoUrl?: string; // does not exist in response and request
   public fullName?: string; // does not exist in response and request
   public image?: ImageModel
+  public rate?: number
 
   constructor(init?: Partial<User>) {
     Object.assign(this, init);

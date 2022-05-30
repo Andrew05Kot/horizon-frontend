@@ -25,7 +25,7 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    this.userService.getPage$(0, 5, [], [])
+    this.userService.getPage$(0, 5, ['rate,' + this.currentSortDirection.toUpperCase()], [])
       .subscribe(response => {
         this.topTourists = response.items;
       }

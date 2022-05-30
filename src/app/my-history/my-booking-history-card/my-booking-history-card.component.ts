@@ -3,6 +3,7 @@ import { Booking } from "../../_models/booking.model";
 import { Router } from "@angular/router";
 import { ImageService } from "../../_services/image.service";
 import { BookingStatus } from "../../_constants/booking-status.constants";
+import { BookingService } from "../../_services/booking.service";
 
 @Component({
   selector: 'app-my-booking-history-card',
@@ -15,7 +16,8 @@ export class MyBookingHistoryCardComponent implements OnInit {
   imageLink: string;
   convertedStatus: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private BookingService: BookingService) { }
 
   ngOnInit(): void {
     this.imageLink = ImageService.getImageLinkByName(this.booking?.tour?.images[0]?.imageName) || '../../../../assets/icons/default_mountains.png';
@@ -43,6 +45,15 @@ export class MyBookingHistoryCardComponent implements OnInit {
     if (status == BookingStatus.DONE) {
       this.convertedStatus = 'Відбувся';
     }
+  }
+
+  doLike(liked: boolean): void {
+    this.booking.liked = liked;
+    this.booking.touristId = this.booking.tourist?.id;
+    this.booking.tourId = this.booking.tour?.id;
+    this.BookingService.update$(this.booking.id, this.booking).subscribe(response => {
+      this.booking = response;
+    });
   }
 
 }

@@ -10,6 +10,7 @@ export class Booking {
               public touristId?: number,
               public tour?: Tour,
               public tourist?: User,
+              public liked?: Boolean,
   ) {
   }
 
@@ -20,7 +21,8 @@ export class Booking {
       object.tourId,
       object.touristId,
       object.tour,
-      object.tourist
+      object.tourist,
+      object.liked,
     );
   }
 }

@@ -28,9 +28,8 @@ mat-card {
         @include center();
 
         img {
+          border-radius: 50%;
           @include square(140px);
-          width: 140px;
-          height: 140px;
         }
       }
 

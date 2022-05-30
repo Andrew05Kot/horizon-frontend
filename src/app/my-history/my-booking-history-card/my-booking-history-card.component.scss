@@ -76,6 +76,21 @@ mat-card {
         margin-right: 20px;
         @include configure-font(21px, 600);
       }
+
+      .likes {
+        display: flex;
+        margin-right: 20px;
+        .mat-icon {
+          width: 31px !important;
+          height: 51px !important;
+          @include configure-font(31px, 600);
+          color: rgba(255, 255, 0, 0.1);
+        }
+
+        .like {
+          margin-right: 15px;
+        }
+      }
     }
   }
 }

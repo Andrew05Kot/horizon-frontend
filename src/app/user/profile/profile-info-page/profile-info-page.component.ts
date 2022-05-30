@@ -36,7 +36,9 @@ export class ProfileInfoPageComponent implements OnInit {
   private processUserResponse(user: User): void {
     this.user = user;
     this.user.fullName = User.getUserFullName(user);
-    this.user.image.link = this.user.image ? ImageService.getImageLinkByName(this.user.image.imageName) : 'assets/icons/tourist_inc.png';
+    this.avatarUrl = this.user.image
+      ? ImageService.getImageLinkByName(this.user.image.imageName)
+      : 'assets/icons/tourist_inc.png';
   }
 
 }

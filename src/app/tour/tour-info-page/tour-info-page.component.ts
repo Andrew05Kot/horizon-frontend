@@ -11,6 +11,7 @@ import { EMPTY, switchMap } from "rxjs";
 import { SnackBarMessageService } from "../../_services/snack-bar-message.service";
 import { DecisionDialogComponent } from "../../_components/decision-dialog/decision-dialog.component";
 import { ConfirmTourComponent } from "../confirm-tour/confirm-tour.component";
+import { ImageService } from "../../_services/image.service";
 
 @Component({
   selector: 'app-tour-info-page',
@@ -24,6 +25,7 @@ export class TourInfoPageComponent implements OnInit {
   carouselWidth: number;
   currentUser: User;
   isOwner = false;
+  avatarLink: string;
 
   constructor(private router: Router,
               private dialog: MatDialog,
@@ -44,6 +46,9 @@ export class TourInfoPageComponent implements OnInit {
       this.tour = Tour.fromObject(response);
       this.carouselWidth = this.tour.urls?.length > 2 ? 920 : 610;
       this.isOwner = this.tour?.owner?.id === this.currentUser?.id;
+      this.avatarLink = this.tour?.owner?.image
+        ? ImageService.getImageLinkByName(this.tour?.owner?.image?.imageName)
+        : '../../../assets/icons/tourist_inc.png';
     });
   }
 
