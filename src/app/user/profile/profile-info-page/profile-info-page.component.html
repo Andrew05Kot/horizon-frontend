@@ -41,9 +41,13 @@
     <mat-card>
       <div class="content">
         <div class="header-label">
-          Історія мандрівок
+          Мої мандрівки
         </div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsum nam obcaecati omnis sint. At dicta illum laudantium nihil possimus quo temporibus veniam. Aliquam architecto at blanditiis omnis pariatur sit.
+        <div class="list">
+          <ng-container *ngFor="let tour of tours">
+            <app-profile-tour-history-card [tour]="tour"></app-profile-tour-history-card>
+          </ng-container>
+        </div>
       </div>
     </mat-card>
   </div>

@@ -4,6 +4,10 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "../../../_services/auth.service";
 import { UserService } from "../../../_services/user.service";
 import { ImageService } from "../../../_services/image.service";
+import { Tour } from 'src/app/_models/tour.model';
+import { TourService } from "../../../_services/tour.service";
+import { Filter } from "../../../_utils/model/filter-model";
+import { FilteringOperation } from "../../../_constants/filtering-operations.constants";
 
 @Component({
   selector: 'app-profile-info-page',
@@ -16,9 +20,11 @@ export class ProfileInfoPageComponent implements OnInit {
   currentUser: User;
   user: User;
   avatarUrl : string;
+  tours: Tour[];
 
   constructor(private router: Router,
               private auth: AuthService,
+              private tourService: TourService,
               private userService: UserService,
               private activatedRoute: ActivatedRoute) {
   }
@@ -39,6 +45,18 @@ export class ProfileInfoPageComponent implements OnInit {
     this.avatarUrl = this.user.image
       ? ImageService.getImageLinkByName(this.user.image.imageName)
       : 'assets/icons/tourist_inc.png';
+    this.tourService.getList$([], this.buildFilters())
+      .subscribe(toursResponse => {
+        this.tours = toursResponse.items;
+        console.log('this.tours' , this.tours)
+      });
+  }
+
+  private buildFilters(): Filter[] {
+    const filters = [
+      new Filter('owner', FilteringOperation.EQUAL, this.user?.id.toString())
+    ];
+    return filters;
   }
 
 }

@@ -1,0 +1,19 @@
+<mat-card>
+  <div class="content">
+    <div class="left-part">
+      <div class="picture">
+        <img [src]="imageLink" alt="tour">
+      </div>
+      <div class="info">
+        <div class="tour-info">
+          <span class="tour-name" (click)="openTour()">
+            {{tour.name}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="right-part" *ngIf="tour.owner?.id == this.currentUser?.id">
+      <button mat-flat-button color="accent" (click)="openEditTour()">Редагувати</button>
+    </div>
+  </div>
+</mat-card>
