@@ -22,8 +22,14 @@
       </div>
       <div class="description">{{tour.description}}</div>
       <div class="bottom">
+        <div class="price-container">
+          <mat-icon>attach_money</mat-icon>
+          <div class="price">
+            {{tour.price}} <span>грн.</span>
+          </div>
+        </div>
         <div class="rate-container">
-          <mat-icon>thumb_up</mat-icon>
+          <mat-icon>favorite_border</mat-icon>
           <div class="rate">
             {{tour.rate}}
           </div>

@@ -13,6 +13,16 @@
         </div>
 
         <div class="field">
+          <label class="label">
+            Ціна за мандрівку (у гривнях)
+          </label>
+          <input class="field-input price" type="number" formControlName="price" autocomplete="disabled" required="true">
+          <mat-error *ngIf="tourForm.hasError('required', 'price') && tourForm.get('price').touched">
+            ціна мандрівки є обов'язковою
+          </mat-error>
+        </div>
+
+        <div class="field">
           <label>Дата та час проведення</label>
           <mat-form-field class="date-time">
             <input class="date-time" formControlName="eventDate" matInput [ngxMatDatetimePicker]="picker" [(ngModel)]="myDatePicker">

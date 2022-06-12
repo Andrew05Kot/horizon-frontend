@@ -69,7 +69,23 @@ mat-card {
 
         display: flex;
         align-items: start;
-        justify-content: flex-end;
+        justify-content: space-between;
+
+        .price-container {
+          display: flex;
+          margin-left: 17px;
+          align-items: center;
+          font-size: 18px;
+
+          .price {
+            font-weight: 700;
+            margin-left: 1px;
+
+            span {
+              margin-left: 3px;
+            }
+          }
+        }
 
         .rate-container {
           display: flex;

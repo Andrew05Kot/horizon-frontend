@@ -18,6 +18,7 @@ export class Tour {
               public geoData?: GeoData,
               public owner?: User,
               public eventDate?: string,
+              public price?: number,
   ) {
     if (eventDate) {
       this.eventDateDate = parse(eventDate, DateTime.defaultFormat, new Date());
@@ -34,7 +35,8 @@ export class Tour {
       model.images.map(image => ImageService.getImageLinkByName(image.imageName)),
       model.geoData ? GeoData.fromObject(model.geoData) : null,
       model.owner,
-      model.eventDate
+      model.eventDate,
+      model.price
     );
   }
 

@@ -47,6 +47,10 @@ $form-width: 615px;
             &.date-time {
               width: 200px;
             }
+
+            &.price {
+              width: 200px;
+            }
           }
 
           mat-form-field {

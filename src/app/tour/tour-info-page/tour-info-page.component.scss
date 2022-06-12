@@ -61,6 +61,23 @@
     }
   }
 
+  .price-container {
+    display: flex;
+    align-items: center;
+    margin-top: 38px;
+    margin-left: 40px;
+    @include configure-font(19px, 500);
+    color: antiquewhite;
+
+    .price {
+      margin-left: 10px;
+    }
+
+    span {
+      margin-left: 3px;
+    }
+  }
+
   .datetime-container {
     display: flex;
     align-items: center;
