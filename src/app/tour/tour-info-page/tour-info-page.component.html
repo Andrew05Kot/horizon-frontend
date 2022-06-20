@@ -47,6 +47,16 @@
       {{tour?.description}}
     </div>
   </div>
+  <div class="joined-container" *ngIf="tour?.joinedUsers">
+    <div class="joined-users-label">
+      З вами також підуть:
+    </div>
+    <div class="users-list">
+      <div *ngFor="let user of tour?.joinedUsers">
+        <app-user-card [size]="'small'" [user]="user"></app-user-card>
+      </div>
+    </div>
+  </div>
   <div class="bottom-container" *ngIf="!isOwner">
     <button mat-flat-button color="accent" (click)="onGoTour()">
       Піти в мандрівку <img src="assets/icons/go_tour_ic.png" alt="go">

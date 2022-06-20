@@ -11,6 +11,7 @@ import { ImageService } from "../../_services/image.service";
 export class UserCardComponent implements OnInit {
 
   @Input() user: User;
+  @Input() size: String = 'big';
   userImage: string = null;
 
   constructor(private router: Router) {

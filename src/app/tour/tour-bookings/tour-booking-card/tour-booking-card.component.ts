@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { BookingService } from "../../../_services/booking.service";
 import { BookingStatus } from "../../../_constants/booking-status.constants";
 import { ImageService } from "../../../_services/image.service";
+import { TourService } from "../../../_services/tour.service";
 
 @Component({
   selector: 'app-tour-booking-card',
@@ -17,6 +18,7 @@ export class TourBookingCardComponent implements OnInit {
   touristImageLink: string = null;
 
   constructor(private router: Router,
+              private tourService: TourService,
               private bookingService: BookingService) {
   }
 

@@ -19,6 +19,8 @@ export class Tour {
               public owner?: User,
               public eventDate?: string,
               public price?: number,
+              public freePlacesCount?: number,
+              public joinedUsers?: User[]
   ) {
     if (eventDate) {
       this.eventDateDate = parse(eventDate, DateTime.defaultFormat, new Date());
@@ -36,7 +38,9 @@ export class Tour {
       model.geoData ? GeoData.fromObject(model.geoData) : null,
       model.owner,
       model.eventDate,
-      model.price
+      model.price,
+      model.freePlacesCount,
+      model.joinedUsers
     );
   }
 

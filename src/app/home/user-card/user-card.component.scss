@@ -5,11 +5,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 250px;
-  height: 250px;
   background-color: rgba(255, 255, 255, 0.1);
   margin: 25px;
   cursor: pointer;
+
+  &.big {
+    @include square(250px);
+  }
+
+  &.small {
+    @include square(200px);
+  }
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.5);
@@ -18,13 +24,27 @@
   .image {
     img {
       border-radius: 50%;
-      @include square(200px);
+
+      &.big {
+        @include square(200px);
+      }
+
+      &.small {
+        @include square(150px);
+      }
     }
   }
 
   .name {
     margin-top: 4px;
-    @include configure-font(21px, 600);
     color: antiquewhite;
+
+    &.big {
+      @include configure-font(21px, 600);
+    }
+
+    &.small {
+      @include configure-font(15px, 600);
+    }
   }
 }

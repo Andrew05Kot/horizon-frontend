@@ -3,6 +3,8 @@
 .container {
   padding-top: 60px;
   @include background-grid();
+  display: flex;
+  flex-direction: column;
 
   .header-container {
     display: flex;
@@ -97,6 +99,17 @@
     max-width: 800px;
     color: antiquewhite;
     @include configure-font(19px, 500);
+  }
+
+  .joined-container {
+    margin-top: 38px;
+    margin-left: 20px;
+    color: antiquewhite;
+    @include configure-font(19px, 500);
+
+    .joined-users-label {
+      margin-left: 20px;
+    }
   }
 
   .carousel-container {

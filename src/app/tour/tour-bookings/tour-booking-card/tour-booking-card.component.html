@@ -17,7 +17,6 @@
       </div>
     </div>
     <div class="right-part">
-<!--    TODO ADD  *ngIf="booking.status == 'PENDING'"-->
       <div class="actions" *ngIf="booking.status == 'PENDING'">
         <div class="reject">
           <button mat-flat-button color="primary" (click)="reject()">Відмовити</button>
