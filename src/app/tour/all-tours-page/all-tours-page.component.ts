@@ -6,6 +6,7 @@ import { Page } from "../../_utils/model/page.model";
 import { PagingUtils } from "../../_utils/paging-utils";
 import { Filter } from "../../_utils/model/filter-model";
 import { FilteringOperation } from "../../_constants/filtering-operations.constants";
+import { SortingParameter } from "../../_models/sorting-parameter.model";
 
 @Component({
   selector: 'app-all-tours-page',
@@ -21,6 +22,13 @@ export class AllToursPageComponent implements OnInit {
   pageSize: number = 12;
   filter: string = '';
   currentSortDirection = 'DESC';
+  sortingParameters: SortingParameter[] =
+    [new SortingParameter('price', 'ціна'),
+      new SortingParameter('eventDate', 'дата'),
+      new SortingParameter('rate', 'рейтинг'),
+      new SortingParameter('name', 'назва'),
+    ];
+  currentSorting = new SortingParameter('name', 'назва');
 
   constructor(private tourService: TourService) {
   }
@@ -36,9 +44,22 @@ export class AllToursPageComponent implements OnInit {
     this.initTours();
   }
 
+  sort(sortParam: SortingParameter) {
+    this.currentSorting = sortParam;
+    // this.currentSortDirection = 'ASC';
+    this.tourService.getPage$(this.pageEvent.pageIndex,
+                              this.pageEvent.pageSize,
+                    [this.currentSorting.fieldKey + ',' + this.currentSortDirection.toUpperCase()],
+                               this.buildFilters())
+      .subscribe(response => this.processTourResponse(response));
+  }
+
   private initTours(): void {
-    this.tourService.getPage$(this.pageEvent.pageIndex, this.pageEvent.pageSize, ['name,' + this.currentSortDirection.toUpperCase()], this.buildFilters())
-      .subscribe(response => this.processTourResponse(response) );
+    this.tourService.getPage$(this.pageEvent.pageIndex,
+                              this.pageEvent.pageSize,
+                    [this.currentSorting.fieldKey + ',' + this.currentSortDirection.toUpperCase()],
+                              this.buildFilters())
+      .subscribe(response => this.processTourResponse(response));
   }
 
   private processTourResponse(responsePage: Page<Tour>): void {
@@ -52,5 +73,4 @@ export class AllToursPageComponent implements OnInit {
     ];
     return filters;
   }
-
 }

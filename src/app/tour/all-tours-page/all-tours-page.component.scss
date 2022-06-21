@@ -20,6 +20,8 @@ section {
     }
 
     .toolbar {
+      display: flex;
+
       .searching {
         max-width: 500px;
         @include width-height(100%, 37px);
@@ -52,6 +54,29 @@ section {
           &:focus {
             outline: unset;
           }
+        }
+      }
+
+      .sorting {
+        margin-left: 25px;
+        height: 37px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .label {
+          @include configure-font(16px, 600);
+          color: antiquewhite;
+          height: 100%;
+        }
+
+        button {
+          margin-left: 14px;
+          width: 150px;
+        }
+
+        .brown {
+          font-weight: 600;
         }
       }
     }
