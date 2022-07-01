@@ -5,6 +5,7 @@ import { Tour } from "../../_models/tour.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MatDialog } from "@angular/material/dialog";
 import { SelectMapPointComponent } from "./select-map-point/select-map-point.component";
+import { MatDatepicker } from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-tour-edit-page',
@@ -17,7 +18,7 @@ export class TourEditPageComponent implements OnInit {
   tourToEdit: Tour;
 
   maxLength = 10000;
-  myDatePicker
+  myDatePicker: MatDatepicker<any>;
   constructor(private activatedRoute: ActivatedRoute,
               private formBuilder: FormBuilder,
               private tourService: TourService,
@@ -99,7 +100,7 @@ export class TourEditPageComponent implements OnInit {
         name: new FormControl(this.tourToEdit?.name, [Validators.required]),
         description: new FormControl(this.tourToEdit?.description, [Validators.required]),
         rate: new FormControl(80),
-        eventDate: new FormControl(null),
+        eventDate: new FormControl(this.tourToEdit?.eventDate),
         price: new FormControl(this.tourToEdit?.price || 0, [Validators.required]),
         files: [[]],
         imagesToRemove: [[]],
