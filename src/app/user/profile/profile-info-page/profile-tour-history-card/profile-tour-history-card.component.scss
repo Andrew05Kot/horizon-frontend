@@ -1,0 +1,60 @@
+@import '../../../../../assets/css/mixins';
+
+mat-card {
+  @include width-height(100%, 110px);
+  border-radius: .7rem;
+  box-shadow: 0 3px 20px rgba(255, 255, 0, .09) !important;
+  background: transparent;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: antiquewhite;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left-part {
+      display: flex;
+      justify-content: space-between;
+
+      .picture {
+        max-width: 100px;
+        @include center();
+
+        img {
+          width: 100px;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 15px;
+
+        .tour-info {
+          @include configure-font(18px, 600);
+
+          .tour-name {
+            cursor: pointer;
+
+            &:hover {
+              color: #D6AD60;
+            }
+          }
+        }
+      }
+    }
+
+    .right-part {
+      @include center();
+    }
+  }
+}

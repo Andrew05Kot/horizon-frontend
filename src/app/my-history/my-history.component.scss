@@ -1,0 +1,21 @@
+@import '../../assets/css/mixins';
+
+.container {
+  padding: 60px 30px 0 30px;
+  @include background-grid();
+
+  .header {
+    display: flex;
+    width: 100%;
+    padding: 40px 30px 0 30px;
+
+    h1 {
+      color: antiquewhite;
+      @include configure-font(28px, 700);
+    }
+  }
+
+  .bookings-list {
+    padding: 0 30px;
+  }
+}

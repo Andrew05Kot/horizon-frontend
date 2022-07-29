@@ -1,0 +1,36 @@
+.carousel {
+  padding: 0 30px;
+
+  .container-fluid {
+    .slider-wrap {
+      position: relative;
+      overflow: hidden;
+      min-height: 200px;
+
+      .slider-main {
+        position: absolute;
+        width: 200%;
+      }
+
+      .item {
+        display: inline-block;
+        width: 300px;
+        height: 200px;
+        position: relative;
+        margin: 0 15px;
+        animation: expand .5s ease-in-out;
+
+        img {
+          width: 300px;
+
+          &:hover {
+            //position: absolute;
+            transform: translateZ(42px);
+            //right: 25px;
+          }
+        }
+      }
+    }
+  }
+
+}

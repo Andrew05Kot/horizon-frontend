@@ -1,0 +1,96 @@
+@import '../../../assets/css/mixins';
+
+mat-card {
+  @include width-height(100%, 170px);
+  border-radius: .7rem;
+  box-shadow: 0 3px 20px rgba(255, 255, 0, .09) !important;
+  background: transparent;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: antiquewhite;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .left-part {
+      display: flex;
+      justify-content: space-between;
+
+      .picture {
+        max-width: 200px;
+        @include center();
+
+        img {
+          width: 200px;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 30px;
+
+        .tour-info {
+          @include configure-font(25px, 600);
+
+          .tour-name {
+            cursor: pointer;
+
+            &:hover {
+              color: #D6AD60;
+            }
+          }
+        }
+
+        .additional-info {
+          display: flex;
+          margin-left: 2px;
+          margin-top: 8px;
+          cursor: pointer;
+          @include configure-font(21px, 600);
+
+          .owner {
+            margin-left: 10px;
+            cursor: pointer;
+
+            &:hover {
+              color: #ffd740;
+            }
+          }
+        }
+      }
+    }
+
+    .right-part {
+      @include center();
+
+      .status {
+        margin-right: 20px;
+        @include configure-font(21px, 600);
+      }
+
+      .likes {
+        display: flex;
+        margin-right: 20px;
+        .mat-icon {
+          width: 31px !important;
+          height: 51px !important;
+          @include configure-font(31px, 600);
+          color: rgba(255, 255, 0, 0.1);
+        }
+
+        .like {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <section>
+      <ng-container *ngIf="tour?.urls?.length > 0; else defaultImage">
+        <owl-carousel-o [options]="customOptions" class="simple-carousel" #carousel>
+          <ng-container *ngFor="let imagePath of tour?.urls; let index = index">
+            <ng-template carouselSlide [id]="imagePath" [width]="300">
+              <img [src]="imagePath" alt="carousel image" (click)="carousel.next()">
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </ng-container>
+      <ng-template #defaultImage>
+        <img src="assets/icons/default_mountains.png" alt="default image">
+      </ng-template>
+    </section>
+  </mat-card-header>
+  <mat-card-content (click)="openInfo()">
+    <div class="content">
+      <div class="name">
+        {{tour.name}}
+      </div>
+      <div class="description">{{tour.description}}</div>
+      <div class="bottom">
+        <div class="price-container">
+          <mat-icon>attach_money</mat-icon>
+          <div class="price">
+            {{tour.price}} <span>грн.</span>
+          </div>
+        </div>
+        <div class="rate-container">
+          <mat-icon>favorite_border</mat-icon>
+          <div class="rate">
+            {{tour.rate}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

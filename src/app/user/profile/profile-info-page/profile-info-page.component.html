@@ -1,0 +1,54 @@
+<section *ngIf="user">
+  <div class="header-block">
+    <mat-card>
+      <div class="content">
+        <div class="left">
+          <div class="hello-block">
+            <h1>
+              Привіт!
+            </h1>
+          </div>
+          <div class="name-block">
+            <div class="full-name">Мене звати, {{user.fullName}}</div>
+          </div>
+          <div class="edit-block" *ngIf="user.id == currentUser.id">
+            <button mat-flat-button color="accent" (click)="goToEditProfile()" >Редагувати профіль</button>
+          </div>
+        </div>
+        <div class="right">
+          <div class="user-avatar">
+            <img src="{{avatarUrl}}" alt="user_avatar">
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="about-block">
+    <mat-card>
+      <div class="content">
+        <div class="header-label">
+          Про мене
+        </div>
+        <div class="about-me-content">
+          {{user.aboutMe}}
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="history-block">
+    <mat-card>
+      <div class="content">
+        <div class="header-label">
+          Мої мандрівки
+        </div>
+        <div class="list">
+          <ng-container *ngFor="let tour of tours">
+            <app-profile-tour-history-card [tour]="tour"></app-profile-tour-history-card>
+          </ng-container>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</section>

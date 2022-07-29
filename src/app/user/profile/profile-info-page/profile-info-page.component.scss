@@ -1,0 +1,123 @@
+@import '../../../../assets/css/mixins';
+
+@mixin block() {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  padding-top: 60px;
+  @include background-grid();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  mat-card {
+    @include width-height(80%, 100%);
+    border-radius: .7rem;
+    box-shadow: 0 3px 20px rgba(255, 255, 0, .09) !important;
+    background: transparent;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: antiquewhite;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .header-block {
+    @include block();
+
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        width: 100%;
+        @include center();
+        flex-direction: column;
+
+        .hello-block {
+          h1 {
+            @include configure-font(40px, 600);
+            color: #F2F4F8;
+          }
+        }
+
+        .name-block {
+          @include configure-font(28px, 600);
+          color: antiquewhite;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .edit-block {
+          margin-top: 18px;
+        }
+      }
+
+      .right {
+        width: 100%;
+        @include center();
+
+        img {
+          @include square(250px);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .about-block {
+    @include block();
+
+    mat-card {
+      .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .header-label {
+          padding: 10px;
+          margin-left: 5px;
+          @include configure-font(28px, 600);
+        }
+
+        .about-me-content {
+          width: 80%;
+          padding: 10px 30px 10px 10px;
+          margin-left: 5px;
+          margin-top: 25px;
+          line-height: inherit;
+          @include configure-font(22px, 500);
+        }
+      }
+    }
+  }
+
+  .history-block {
+    @include block();
+
+    mat-card {
+     .content {
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+
+       .header-label {
+         padding: 10px;
+         margin-left: 5px;
+         @include configure-font(28px, 600);
+       }
+     }
+    }
+  }
+
+}

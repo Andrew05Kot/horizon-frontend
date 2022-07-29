@@ -1,0 +1,34 @@
+<mat-card>
+  <div class="content">
+    <div class="left-part">
+      <div class="user-picture">
+        <img src="{{touristImageLink}}" alt="tourist">
+      </div>
+      <div class="info">
+        <div class="tourist-info">
+          <span class="tourist-name" (click)="openTouristProfile()">
+            {{booking.tourist.firstName}} {{booking.tourist.lastName}}
+          </span>
+          <span class="phone-number">({{booking.tourist.phoneNumber}})</span>
+        </div>
+        <div class="tour-info">
+          Хоче вирушити в: <span class="tour-name" (click)="openTour()">"{{booking.tour.name}}"</span>
+        </div>
+      </div>
+    </div>
+    <div class="right-part">
+      <div class="actions" *ngIf="booking.status == 'PENDING'">
+        <div class="reject">
+          <button mat-flat-button color="primary" (click)="reject()">Відмовити</button>
+        </div>
+        <div class="accept">
+          <button mat-flat-button color="accent" (click)="accept()">Прийняти</button>
+        </div>
+      </div>
+
+      <div class="status" *ngIf="booking.status != 'PENDING'">
+        {{convertedStatus}}
+      </div>
+    </div>
+  </div>
+</mat-card>

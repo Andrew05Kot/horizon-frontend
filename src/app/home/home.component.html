@@ -1,0 +1,51 @@
+<div class="container" >
+
+  <div class="top-users" *ngIf="topTourists?.length > 0">
+    <div class="label">
+      <h1>Топ туристів</h1>
+    </div>
+    <div class="users-list">
+      <div *ngFor="let user of topTourists">
+        <app-user-card [user]="user"></app-user-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-tours" >
+    <div class="label">
+      <h1>Топ мандрівок</h1>
+    </div>
+    <div class="top-tours-list">
+      <carousel *ngIf="carouselModels.length > 0"
+                [width]="1344"
+                [height]="400"
+                [cellsToShow]="1"
+                [loop]=true
+                [cellWidth]="1344"
+                [transitionDuration]="500"
+                [autoplay]="true"
+                [autoplayInterval]="6000"
+                [margin]="70">
+        <div class="carousel-cell" *ngFor="let carouselModel of carouselModels">
+          <div class="img">
+            <img [src]="carouselModel.imageLink" alt="tour">
+          </div>
+          <div class="name">
+            {{carouselModel.name}}
+          </div>
+        </div>
+      </carousel>
+    </div>
+  </div>
+
+  <div class="tours">
+    <div class="label">
+      <h1>Список мандрівок</h1>
+    </div>
+    <app-tours-list [_tours]="tours"></app-tours-list>
+    <div class="button-row">
+      <a routerLink="/tours" mat-flat-button color="accent">Дивитись усі..</a>
+    </div>
+  </div>
+
+</div>

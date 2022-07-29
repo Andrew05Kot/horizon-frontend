@@ -1,0 +1,45 @@
+<mat-card>
+  <div class="content">
+    <div class="left-part">
+      <div class="picture">
+        <img [src]="imageLink" alt="tour">
+      </div>
+      <div class="info">
+        <div class="tour-info">
+          <span class="tour-name" (click)="openTour()">
+            {{booking.tour.name}}
+          </span>
+        </div>
+        <div class="additional-info">
+          {{booking.tour.eventDate | date: "dd.MM.yyyy HH:mm"}}
+          <span class="owner" (click)="openOwnerProfile()">
+            {{booking?.tour?.owner?.firstName}} {{booking?.tour?.owner?.lastName}} ({{booking?.tour?.owner?.phoneNumber}})
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="right-part">
+      <div class="status" *ngIf="booking.status != 'DONE'">
+        {{convertedStatus}}
+      </div>
+      <div class="likes" *ngIf="booking.status == 'DONE'">
+        <div class="like">
+          <mat-icon
+            [ngStyle]="{'color': booking.liked ? 'antiquewhite' : 'rgba(255, 255, 0, 0.1)'}"
+            (click)="doLike(true)"
+          >
+            thumb_up_alt
+          </mat-icon>
+        </div>
+        <div class="dislike">
+          <mat-icon
+            [ngStyle]="{'color': booking.liked === false ? 'antiquewhite' : 'rgba(255, 255, 0, 0.1)' }"
+            (click)="doLike(false)"
+          >
+            thumb_down_alt
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

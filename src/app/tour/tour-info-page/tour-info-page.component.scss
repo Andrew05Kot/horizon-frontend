@@ -1,0 +1,155 @@
+@import '../../../assets/css/mixins';
+
+.container {
+  padding-top: 60px;
+  @include background-grid();
+  display: flex;
+  flex-direction: column;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 40px;
+
+    .title {
+      display: flex;
+
+      h1 {
+        @include configure-font(34px, 700);
+        color: antiquewhite;
+      }
+    }
+
+    .action-buttons {
+      .delete-button {
+        margin-left: 11px;
+      }
+    }
+
+    .owner-info {
+      display: flex;
+      cursor: pointer;
+
+      h2 {
+        @include configure-font(30px, 600);
+        color: antiquewhite;
+
+        &:hover {
+          color: #D6AD60;
+        }
+      }
+
+      .image {
+        margin-left: 15px;
+
+        img {
+          border-radius: 50%;
+          height: 41px;
+        }
+      }
+
+    }
+  }
+
+  .open-map-container {
+    margin-top: 38px;
+    margin-left: 40px;
+
+    button {
+      width: 200px;
+      height: 46px;
+    }
+  }
+
+  .price-container {
+    display: flex;
+    align-items: center;
+    margin-top: 38px;
+    margin-left: 40px;
+    @include configure-font(19px, 500);
+    color: antiquewhite;
+
+    .price {
+      margin-left: 10px;
+    }
+
+    span {
+      margin-left: 3px;
+    }
+  }
+
+  .datetime-container {
+    display: flex;
+    align-items: center;
+    margin-top: 38px;
+    margin-left: 40px;
+    @include configure-font(19px, 500);
+    color: antiquewhite;
+
+    .event-date {
+      margin-left: 10px;
+    }
+  }
+
+  .description-container {
+    margin-top: 38px;
+    margin-left: 40px;
+    max-width: 800px;
+    color: antiquewhite;
+    @include configure-font(19px, 500);
+  }
+
+  .joined-container {
+    margin-top: 38px;
+    margin-left: 20px;
+    color: antiquewhite;
+    @include configure-font(19px, 500);
+
+    .joined-users-label {
+      margin-left: 20px;
+    }
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .bottom-container {
+    @include center();
+    position: fixed;
+    color: rgba(0, 0, 0, .87);
+    z-index: 1;
+    top: 85%;
+    left: 46%;
+    cursor: pointer;
+
+    button {
+      @include configure-font(14px, 700);
+      @include width-height(210px, 60px);
+      border-radius: 30px;
+      background: #ffd740;
+      box-shadow: 0 3px 20px rgba(255, 255, 0, .09) !important;
+
+      img {
+        margin-left: 10px;
+        height: 40px;
+      }
+
+      &:hover {
+        @include width-height(225px, 68px);
+        @include configure-font(16px, 700);
+        margin-top: -4px;
+        margin-left: -7px;
+
+        img {
+          height: 44px;
+        }
+      }
+    }
+  }
+}

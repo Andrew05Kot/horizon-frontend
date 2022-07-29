@@ -1,0 +1,56 @@
+<section>
+  <div class="upload-image-component">
+    <div class="image-upload">
+      <ng-container *ngIf="!loadedImage">
+        <div class="select-image-container">
+          <div class="upload-caption">
+                    <span>
+	                    Завантажити
+                      <br> ({{supportedFormatsForView}})
+                    </span>
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="add-image-div" *ngIf="!inProcess; else progressSpin">
+        <div class="image-container" (click)="imageInput.click()">
+
+          <ngx-file-drop dropZoneClassName="drop-zone"
+                         contentClassName="drop-zone-content"
+                         (onFileDrop)="catchDroppedFile($event)"
+          >
+            <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+              <ng-container *ngIf="loadedImage">
+                <img [src]="getSanitizeUrl(loadedImage)" alt="image">
+              </ng-container>
+            </ng-template>
+          </ngx-file-drop>
+
+        </div>
+
+        <div class="remove-image" *ngIf="loadedImage">
+          <button (click)="clearLoadedFile()"> <mat-icon>delete_forever</mat-icon> </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="browse-link">
+      <button mat-flat-button color="primary"
+              (click)="imageInput.click()">
+        Вибрати
+        <mat-icon>image_search</mat-icon>
+      </button>
+    </div>
+
+    <input hidden
+           type="file"
+           #imageInput
+           (change)="catchUploadedFile($event)">
+  </div>
+</section>
+
+<ng-template #progressSpin>
+  <mat-progress-spinner color=warm mode="indeterminate">
+  </mat-progress-spinner>
+</ng-template>

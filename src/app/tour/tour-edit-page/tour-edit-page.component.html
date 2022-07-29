@@ -1,0 +1,81 @@
+<div class="container" *ngIf="tourForm">
+  <div class="edit-form">
+    <form [formGroup]="tourForm">
+      <div class="fields">
+        <div class="field">
+          <label class="label">
+            Назва
+          </label>
+          <input class="field-input" type="text" formControlName="name" autocomplete="disabled" required="true">
+          <mat-error *ngIf="tourForm.hasError('required', 'name') && tourForm.get('name').touched">
+            назва мандрівки є обов'язковою
+          </mat-error>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Ціна за мандрівку (у гривнях)
+          </label>
+          <input class="field-input price" type="number" formControlName="price" autocomplete="disabled" required="true">
+          <mat-error *ngIf="tourForm.hasError('required', 'price') && tourForm.get('price').touched">
+            ціна мандрівки є обов'язковою
+          </mat-error>
+        </div>
+
+        <div class="field">
+          <label>Дата та час проведення</label>
+          <mat-form-field class="date-time">
+            <input class="date-time" formControlName="eventDate" matInput [ngxMatDatetimePicker]="picker" [(ngModel)]="myDatePicker">
+            <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Опис
+          </label>
+          <mat-form-field>
+                        <textarea
+                          #description
+                          maxlength="1000"
+                          matInput
+                          formControlName="description"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="6"></textarea>
+            <mat-hint align="end">{{description.value.length}} / 500</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <div class="open-map-button">
+            <button mat-flat-button color="accent" (click)="openSelectMapDialog()">Вибрати на мапі <mat-icon> map</mat-icon> </button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Фото
+          </label>
+          <div class="image-cropper">
+            <app-edit-tour-images [parentForm]="tourForm"></app-edit-tour-images>
+          </div>
+        </div>
+
+      </div>
+    </form>
+    <div class="button-row">
+      <div class="save">
+        <button
+          [disabled]="tourForm.invalid"
+          mat-flat-button
+          color="accent"
+          (click)="save()"
+        > Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

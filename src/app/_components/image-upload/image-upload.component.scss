@@ -1,0 +1,108 @@
+@import '../../../assets/css/mixins';
+
+$image_width: 260px;
+$image_height: 260px;
+
+ngx-file-drop {
+  @include width-height(100%, 100%);
+}
+
+.upload-image-component {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: center;
+
+  .image-upload {
+    @include width-height($image_width, $image_height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+
+    .select-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      @include width-height($image_width, $image_height);
+      text-align: center;
+      border: 1px solid #89A2B8;
+      border-radius: 50%;
+      position: absolute;
+      letter-spacing: 0px;
+
+      .upload-caption {
+        line-height: 10px;
+
+        span {
+          width: 100%;
+          color: #73797E;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .add-image-div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include width-height(100%, 100%);
+      position: relative;
+
+      .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include width-height(100%, 100%);
+
+        img {
+          text-align: center;
+          object-fit: cover;
+          @include width-height(100%, 100%);
+          border-radius: 50%;
+        }
+      }
+
+      .image-container:hover {
+        cursor: pointer;
+      }
+
+      .remove-image {
+        position: absolute;
+        margin-left: 95%;
+        margin-bottom: 95%;
+
+        button {
+          @include width-height(15px, 18px);
+          @include configure-font(18px, 700);
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          border: unset;
+          cursor: pointer;
+          right: 3px;
+          top: 3px;
+          color: #673ab7;
+          display: flex;
+          //background-color: rgba(255, 255, 255, .6);
+        }
+      }
+    }
+
+  }
+
+  .browse-link {
+    margin: 20px auto;
+
+    button {
+      @include width-height(130px, 40px);
+      @include configure-font(15px, 600);
+      border: unset;
+      cursor: pointer;
+    }
+  }
+}
+
+

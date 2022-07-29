@@ -1,0 +1,13 @@
+<section>
+  <div class="question">
+    Чи дісно ви хочете піти в мандрівку "{{tour.name}}", разом з "{{tour.owner.firstName}} {{tour.owner.lastName}}"?
+  </div>
+  <div mat-dialog-actions class="actions">
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" >
+      Скасувати
+    </button>
+    <button mat-flat-button color="accent" (click)="makeTourRequest()">
+      Підтвердити
+    </button>
+  </div>
+</section>

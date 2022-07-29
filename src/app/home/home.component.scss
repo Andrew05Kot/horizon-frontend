@@ -1,0 +1,98 @@
+@import '../../assets/css/mixins';
+
+.container {
+  @include background-grid();
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+
+  .top-users {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .users-list {
+      display: flex;
+      justify-content: center;
+      padding-left: 35px;
+      padding-right: 35px;
+      width: 100%;
+      max-width: 1344px;
+      height: 300px;
+
+      .carousel-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  }
+
+  .top-tours {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .top-tours-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 35px;
+      padding-right: 35px;
+      width: 100%;
+      max-width: 1344px;
+      height: 400px;
+      background-color: rgba(255, 255, 0, 0.1);
+      color: antiquewhite;
+
+      .carousel-cell {
+        @include width-height(1344px, 400px);
+        display: flex;
+
+        .img {
+          width: 600px;
+
+          img {
+            height: 400px;
+          }
+        }
+
+        .carousel-container {
+          height: 400px !important;
+        }
+
+        .name {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 744px;
+          @include configure-font(32px, 600);
+        }
+      }
+    }
+  }
+
+  .tours {
+    text-align: center;
+    padding: 35px;
+  }
+
+  .label {
+    text-align: center;
+
+    h1 {
+      color: #F2F4F8;
+      font-size: 50px;
+      line-height: 1.3em;
+      font-family: "SF Pro Text", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+  }
+
+
+}

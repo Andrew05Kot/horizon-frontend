@@ -1,0 +1,23 @@
+<div class="paginator">
+  <button class="pagination-button"
+          disabled="{{checkIfFirstPage()}}"
+          (click)="setPage(pageNumber - 1)"
+          mat-flat-button>
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <span class="container-of-buttons">
+    <button mat-flat-button
+            class="page-number"
+            *ngFor="let button of buttonPages"
+            (click)="setPage(button)"
+            [ngClass]="{'active': button === pageNumber}">
+      {{button + 1}}
+    </button>
+  </span>
+  <button class="pagination-button"
+          disabled="{{checkIfLastPage()}}"
+          (click)="setPage(pageNumber + 1)"
+          mat-flat-button>
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

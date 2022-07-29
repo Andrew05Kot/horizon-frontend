@@ -1,0 +1,10 @@
+<div class="user-block-container"
+     (click)="openUserProfile()"
+     [ngClass]="size == 'big' ? 'big' : 'small'">
+  <div class="image">
+    <img src="{{userImage}}" alt="avatar"  [ngClass]="size == 'big' ? 'big' : 'small'">
+  </div>
+  <div class="name" [ngClass]="size == 'big' ? 'big' : 'small'">
+    {{user.lastName}} {{user.firstName}}
+  </div>
+</div>
