@@ -22,9 +22,8 @@ export class User {
               public image?: ImageModel,
               public rate?: number
   ) {
-    this.locale = new Locale('UK', 'UA')
     this.locale = Locales.VALUES.find(locale => {
-      return locale.language = this.language;
+      return locale.language == this.language;
     });
   }
 

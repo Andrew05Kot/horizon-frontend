@@ -1,15 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from "../../_models/user.model";
 import { Locales } from "../../_constants/locale.constants";
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 import { Locale } from "../../_models/locale.model";
+import { UserService } from "../../_services/user.service";
+import { AuthService } from "../../_services/auth.service";
 
 @Component({
   selector: 'app-lang-switcher',
   templateUrl: './lang-switcher.component.html',
   styleUrls: ['./lang-switcher.component.scss']
 })
-export class LangSwitcherComponent implements OnInit {
+export class LangSwitcherComponent {
 
   @Input() set currentUser(value: User) {
     if (value) {
@@ -20,19 +22,18 @@ export class LangSwitcherComponent implements OnInit {
   _currentUser: User;
   _locales: Locale[] = Locales.VALUES;
 
-  constructor() {
-    console.log(this._locales);
+  constructor(private userService: UserService,
+              private authService: AuthService) {
   }
 
-  ngOnInit(): void {
-  }
-
-  selectLocale(locale: string): void {
-    console.log('selected: ', locale);
+  selectLocale(locale: Locale): void {
+    this._currentUser.language = locale.language;
+    this._currentUser.locale = locale;
+    this.userService.patch$(this._currentUser.id, this._currentUser)
+      .subscribe(() => this.authService.updateCurrentUser(this._currentUser));
   }
 
   getUnicodeFlagIcon(locale: Locale): any {
-    // console.log('locale ', locale)
     return getUnicodeFlagIcon(locale.country);
   }
 }

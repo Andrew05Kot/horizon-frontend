@@ -25,6 +25,10 @@ export class UserService extends BaseApiService <User> {
     return this.http.delete<any>(this.apiPath + `/images/${imageId}`);
   }
 
+  patch$(id: number, user: User): Observable<void> {
+    return this.http.patch<void>(this.apiPath + `/${id}`, user);
+  }
+
   getApiName(): string {
     return '/user';
   }

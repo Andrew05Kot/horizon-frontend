@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from "../../_models/user.model";
 import { AuthService } from "../../_services/auth.service";
 
@@ -7,7 +7,7 @@ import { AuthService } from "../../_services/auth.service";
   templateUrl: './user-dropdown.component.html',
   styleUrls: ['./user-dropdown.component.scss']
 })
-export class UserDropdownComponent implements OnInit {
+export class UserDropdownComponent {
 
   @Input() set currentUser(value: User) {
     if (value) {
@@ -20,9 +20,6 @@ export class UserDropdownComponent implements OnInit {
   _currentUser: User;
 
   constructor(private authService: AuthService) {
-  }
-
-  ngOnInit(): void {
   }
 
   public logout(): void {
