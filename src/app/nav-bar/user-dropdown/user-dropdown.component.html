@@ -1,0 +1,14 @@
+<a *ngIf="_currentUser"
+   mat-button
+   [matMenuTriggerFor]="menu"
+>
+  {{_currentUser?.firstName}}
+</a>
+
+<mat-menu #menu="matMenu" xPosition="before"
+          class="mat-elevation-z1 nav-dropdown">
+  <a mat-button routerLink="{{_profileLink}}">Профіль</a>
+  <button mat-menu-item (click)="logout()">
+    Вийти
+  </button>
+</mat-menu>

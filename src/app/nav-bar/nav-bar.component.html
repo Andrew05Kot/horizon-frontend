@@ -12,17 +12,8 @@
   <a *ngIf="currentUser" mat-button routerLink="my-history">Історія</a>
   <a *ngIf="!currentUser" mat-button routerLink="login">Увійти</a>
 
-  <a *ngIf="currentUser"
-     mat-button
-     [matMenuTriggerFor]="menu"
-  >
-    {{currentUser?.firstName}}
-  </a>
-  <mat-menu #menu="matMenu" xPosition="before"
-            class="mat-elevation-z1 nav-dropdown">
-    <a mat-button routerLink="{{profileLink}}">Профіль</a>
-    <button mat-menu-item (click)="logout()">
-      Вийти
-    </button>
-  </mat-menu>
+  <app-user-dropdown [currentUser]="currentUser"></app-user-dropdown>
+
+  <app-lang-switcher [currentUser]="currentUser"></app-lang-switcher>
+
 </div>

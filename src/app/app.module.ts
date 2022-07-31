@@ -58,6 +58,8 @@ import {
 } from '@angular-material-components/datetime-picker';
 import { UserCardComponent } from './home/user-card/user-card.component';
 import { ProfileTourHistoryCardComponent } from './user/profile/profile-info-page/profile-tour-history-card/profile-tour-history-card.component';
+import { LangSwitcherComponent } from './nav-bar/lang-switcher/lang-switcher.component';
+import { UserDropdownComponent } from './nav-bar/user-dropdown/user-dropdown.component';
 
 
 @NgModule({
@@ -89,7 +91,9 @@ import { ProfileTourHistoryCardComponent } from './user/profile/profile-info-pag
     MyHistoryComponent,
     MyBookingHistoryCardComponent,
     UserCardComponent,
-    ProfileTourHistoryCardComponent
+    ProfileTourHistoryCardComponent,
+    LangSwitcherComponent,
+    UserDropdownComponent
   ],
   imports: [
     BrowserModule,
