@@ -60,6 +60,7 @@ import { UserCardComponent } from './home/user-card/user-card.component';
 import { ProfileTourHistoryCardComponent } from './user/profile/profile-info-page/profile-tour-history-card/profile-tour-history-card.component';
 import { LangSwitcherComponent } from './nav-bar/lang-switcher/lang-switcher.component';
 import { UserDropdownComponent } from './nav-bar/user-dropdown/user-dropdown.component';
+import { NgxTranslateModule } from "./localization/ngx-translate.module";
 
 
 @NgModule({
@@ -95,34 +96,35 @@ import { UserDropdownComponent } from './nav-bar/user-dropdown/user-dropdown.com
     LangSwitcherComponent,
     UserDropdownComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatCardModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    NgxEditorModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    NgxFileDropModule,
-    CarouselModule,
-    IvyCarouselModule,
-    LeafletModule,
-    MatDialogModule,
-    FormsModule,
-    MatSnackBarModule,
-    MatDatepickerModule,
-    NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
-    NgxMatNativeDateModule
-  ],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatButtonModule,
+		HttpClientModule,
+		MatToolbarModule,
+		MatButtonModule,
+		MatMenuModule,
+		MatCardModule,
+		MatIconModule,
+		ReactiveFormsModule,
+		MatFormFieldModule,
+		NgxEditorModule,
+		MatInputModule,
+		MatProgressSpinnerModule,
+		NgxFileDropModule,
+		CarouselModule,
+		IvyCarouselModule,
+		LeafletModule,
+		MatDialogModule,
+		FormsModule,
+		MatSnackBarModule,
+		MatDatepickerModule,
+		NgxMatDatetimePickerModule,
+		NgxMatTimepickerModule,
+		NgxMatNativeDateModule,
+    NgxTranslateModule
+	],
   providers: [
     CookieService,
     InterceptorProviders

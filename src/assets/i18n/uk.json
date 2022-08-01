@@ -1,0 +1,14 @@
+{
+  "NavBar": {
+    "HomePageLink": "Гловна",
+    "ToursLink": "Всі мандрівки",
+    "EditLink": "Створити",
+    "RequestsLink": "Запити",
+    "MyHistoryLink": "Історія",
+    "LoginLink": "Увійти"
+  },
+  "UserDropdown": {
+    "ProfileLink": "Профіль",
+    "LogoutLink": "Вийти"
+  }
+}

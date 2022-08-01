@@ -1,13 +1,7 @@
-button {
-  font-size: 18px;
-  font-weight: 700;
-  color: antiquewhite;
-}
-
-button:hover {
-  background-color: black;
-}
-
-.selected-locale {
-  background: rgba(255, 255, 255, 0.2);
+.mat-menu-panel {
+  &.nav-dropdown {
+    a {
+      width: 80px !important;
+    }
+  }
 }

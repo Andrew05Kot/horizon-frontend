@@ -1,0 +1,14 @@
+{
+  "NavBar": {
+    "HomePageLink": "Home",
+    "ToursLink": "All travels",
+    "EditLink": "Create",
+    "RequestsLink": "Requests",
+    "MyHistoryLink": "History",
+    "LoginLink": "Login"
+  },
+  "UserDropdown": {
+    "ProfileLink": "Profile",
+    "LogoutLink": "Logout"
+  }
+}
