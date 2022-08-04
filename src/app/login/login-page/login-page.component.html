@@ -1,7 +1,7 @@
 <section [ngStyle]="{ background: 'login_wallpapper.jpg' | asUrl }">
   <div class="box">
     <div class="form">
-      <h2>Авторизація</h2>
+      <h2>{{'LoginPage.Title' | translate}}</h2>
 
 <!--      <form>-->
 <!--        <div class="input-box">-->
@@ -21,12 +21,12 @@
 
       <button (click)="loginGoogle()">
         <div class="logo"><img src="assets/icons/google.png" alt="google"></div>
-        <div class="caption">Авторизуватись з Google</div>
+        <div class="caption">{{'LoginPage.LoginViaGoogle' | translate}}</div>
       </button>
 
       <button (click)="loginViaFacebook()">
         <div class="logo"><img src="assets/icons/facebook.png" alt="facebook"></div>
-        <div class="caption">Авторизуватись з Facebook</div>
+        <div class="caption">{{'LoginPage.LoginViaFacebook' | translate}}</div>
       </button>
 
 <!--      TODO future-->

@@ -30,7 +30,7 @@ export class AuthService {
         this.currentUserSubject.next(null);
         return null;
       }
-      const user: User = JSON.parse(currentUser);
+      const user: User = User.fromObject(JSON.parse(currentUser));
       this.currentUserSubject.next(user);
       return user;
     }
@@ -41,7 +41,7 @@ export class AuthService {
     return this.http.get<User>(environment.apiUrl + '/user/current')
       .pipe(
         map((user: User) => {
-          this.updateCurrentUser(user);
+          this.updateCurrentUser(User.fromObject(user));
           return user;
         }));
   }
@@ -73,7 +73,7 @@ export class AuthService {
 
   public authenticate(token: string): void {
     this.getAuthUser(token).subscribe((user) => {
-      this.currentUserSubject.next(user);
+      this.currentUserSubject.next(User.fromObject(user));
       const isAdmin = this.isAdminOrSubAdmin(user);
       isAdmin ? this.router.navigateByUrl('/admin') : this.router.navigateByUrl('/');
     });

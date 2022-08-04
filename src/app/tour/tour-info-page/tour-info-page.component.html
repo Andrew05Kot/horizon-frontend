@@ -6,8 +6,8 @@
       </h1>
     </div>
     <div *ngIf="isOwner" class="action-buttons">
-      <button (click)="edit(tour.id)" class="edit-button" mat-flat-button color="accent">Редагувати</button>
-      <button (click)="delete(tour)" class="delete-button"  mat-flat-button color="accent">Видалити</button>
+      <button (click)="edit(tour.id)" class="edit-button" mat-flat-button color="accent">{{'TourInfoPage.Edit' | translate}}</button>
+      <button (click)="delete(tour)" class="delete-button"  mat-flat-button color="accent">{{'TourInfoPage.Remove' | translate}}</button>
     </div>
     <div *ngIf="!isOwner" class="owner-info">
       <div class="name">
@@ -31,15 +31,15 @@
   </div>
   <div class="open-map-container">
     <button mat-flat-button color="accent" (click)="openMap()">
-      Відкрити на мапі <mat-icon>map</mat-icon>
+      {{'TourInfoPage.OpenMap' | translate}} <mat-icon>map</mat-icon>
     </button>
   </div>
   <div class="price-container">
-    <div class="label">Ціна туру:</div>
-    <div class="price">{{tour?.price}}</div><span> грн.</span>
+    <div class="label">{{'TourInfoPage.PriceLabel' | translate}}:</div>
+    <div class="price">{{tour?.price}}</div><span> {{'TourInfoPage.CurrencyType' | translate}}</span>
   </div>
   <div class="datetime-container">
-    <div class="label">Дата та час проведення туру:</div>
+    <div class="label">{{'TourInfoPage.DateTimeLabel' | translate}}:</div>
     <div class="event-date">{{tour.eventDate | date: "dd.MM.yyyy HH:mm"}}</div>
   </div>
   <div class="description-container">
@@ -49,7 +49,7 @@
   </div>
   <div class="joined-container" *ngIf="tour?.joinedUsers">
     <div class="joined-users-label">
-      З вами також підуть:
+      {{'TourInfoPage.JoinedUsersLabel' | translate}}:
     </div>
     <div class="users-list">
       <div *ngFor="let user of tour?.joinedUsers">
@@ -59,7 +59,7 @@
   </div>
   <div class="bottom-container" *ngIf="!isOwner">
     <button mat-flat-button color="accent" (click)="onGoTour()">
-      Піти в мандрівку <img src="assets/icons/go_tour_ic.png" alt="go">
+      {{'TourInfoPage.AcceptTourLabel' | translate}} <img src="assets/icons/go_tour_ic.png" alt="go">
     </button>
   </div>
 </div>

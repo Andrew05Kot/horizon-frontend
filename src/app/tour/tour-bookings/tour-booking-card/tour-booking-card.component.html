@@ -12,17 +12,17 @@
           <span class="phone-number">({{booking.tourist.phoneNumber}})</span>
         </div>
         <div class="tour-info">
-          Хоче вирушити в: <span class="tour-name" (click)="openTour()">"{{booking.tour.name}}"</span>
+          {{'TourBookingCard.WantsGoTo' | translate}} <span class="tour-name" (click)="openTour()">"{{booking.tour.name}}"</span>
         </div>
       </div>
     </div>
     <div class="right-part">
       <div class="actions" *ngIf="booking.status == 'PENDING'">
         <div class="reject">
-          <button mat-flat-button color="primary" (click)="reject()">Відмовити</button>
+          <button mat-flat-button color="primary" (click)="reject()">{{'TourBookingCard.Refuse' | translate}}</button>
         </div>
         <div class="accept">
-          <button mat-flat-button color="accent" (click)="accept()">Прийняти</button>
+          <button mat-flat-button color="accent" (click)="accept()">{{'TourBookingCard.Accept' | translate}}</button>
         </div>
       </div>
 

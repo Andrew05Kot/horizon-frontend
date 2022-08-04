@@ -5,24 +5,15 @@
 
   <div class="spaces"></div>
 
-  <a mat-button routerLink="home">Головна</a>
-  <a mat-button routerLink="tours">Всі мандрівки</a>
-  <a *ngIf="currentUser" mat-button routerLink="tour/edit">Створити</a>
-  <a *ngIf="currentUser" mat-button routerLink="requests">Запити</a>
-  <a *ngIf="currentUser" mat-button routerLink="my-history">Історія</a>
-  <a *ngIf="!currentUser" mat-button routerLink="login">Увійти</a>
+  <a mat-button routerLink="home">{{'NavBar.HomePageLink' | translate}}</a>
+  <a mat-button routerLink="tours">{{'NavBar.ToursLink' | translate}}</a>
+  <a *ngIf="currentUser" mat-button routerLink="tour/edit">{{'NavBar.EditLink' | translate}}</a>
+  <a *ngIf="currentUser" mat-button routerLink="requests">{{'NavBar.RequestsLink' | translate}}</a>
+  <a *ngIf="currentUser" mat-button routerLink="my-history">{{'NavBar.MyHistoryLink' | translate}}</a>
+  <a *ngIf="!currentUser" mat-button routerLink="login">{{'NavBar.LoginLink' | translate}}</a>
 
-  <a *ngIf="currentUser"
-     mat-button
-     [matMenuTriggerFor]="menu"
-  >
-    {{currentUser?.firstName}}
-  </a>
-  <mat-menu #menu="matMenu" xPosition="before"
-            class="mat-elevation-z1 nav-dropdown">
-    <a mat-button routerLink="{{profileLink}}">Профіль</a>
-    <button mat-menu-item (click)="logout()">
-      Вийти
-    </button>
-  </mat-menu>
+  <app-user-dropdown [currentUser]="currentUser"></app-user-dropdown>
+
+  <app-lang-switcher [currentUser]="currentUser"></app-lang-switcher>
+
 </div>
