@@ -16,5 +16,8 @@ export class AppComponent {
               private translate: TranslateService) {
     this.isAdmin = this.auth.getCurrentUser()?.role == Role.Admin;
     this.translate.use(this.auth.getCurrentUser()?.language?.toLocaleLowerCase());
+    if (!this.translate.langs) {
+      this.translate.use('EN');
+    }
   }
 }
