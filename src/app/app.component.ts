@@ -16,8 +16,8 @@ export class AppComponent {
   constructor(private auth: AuthService,
               private translate: TranslateService) {
     this.isAdmin = this.auth.getCurrentUser()?.role == Role.Admin;
-    this.translate.use(this.auth.getCurrentUser()?.language?.toLocaleLowerCase());
-    if (!this.translate.langs) {
+    this.translate.use(this.auth.getCurrentUser()?.language);
+    if (!this.translate.currentLang) {
       this.translate.use(Locales.DEFAULT_LOCALE.language);
     }
   }
