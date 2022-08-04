@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
+import { Locales } from './_constants/locale.constants';
 import { Role } from "./_constants/role.constants";
 import { AuthService } from "./_services/auth.service";
 
@@ -17,7 +18,7 @@ export class AppComponent {
     this.isAdmin = this.auth.getCurrentUser()?.role == Role.Admin;
     this.translate.use(this.auth.getCurrentUser()?.language?.toLocaleLowerCase());
     if (!this.translate.langs) {
-      this.translate.use('EN');
+      this.translate.use(Locales.DEFAULT_LOCALE.language);
     }
   }
 }

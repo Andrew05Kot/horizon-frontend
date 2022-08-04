@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import {AppConstants} from "../../_constants/app.constants";
+import { Locales } from '../../_constants/locale.constants';
 import {AuthService} from "../../_services/auth.service";
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginPageComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private translate: TranslateService) {
-    this.translate.use('en');
+    this.translate.use(Locales.DEFAULT_LOCALE.language);
   }
 
   loginGoogle(): void {

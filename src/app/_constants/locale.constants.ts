@@ -1,8 +1,11 @@
 import { Locale } from "../_models/locale.model";
 
 export namespace Locales {
+
+  export const DEFAULT_LOCALE: Locale = new Locale('UK', 'UA');
+
   export const VALUES: Locale[] = [
-    new Locale('UK', 'UA'),
+    DEFAULT_LOCALE,
     new Locale('EN', 'GB')
   ];
 }
