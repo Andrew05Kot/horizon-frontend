@@ -29,7 +29,11 @@
     "Title": "Усі мандрівки",
     "NotFound": "Нічого не знайдено",
     "SearchPlaceholder": "Пошук по імені та опису",
-    "SortBy": "Сортувати за"
+    "SortBy": "Сортувати за",
+    "NameSort": "назва",
+    "DateSort": "дата",
+    "RateSort": "рейтинг",
+    "PriceSort": "ціна"
   },
   "ConfirmTour": {
     "Question1": "Чи дісно ви хочете піти в мандрівку",

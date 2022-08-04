@@ -15,13 +15,13 @@
       </div>
       <div class="sorting">
         <div class="label">{{'AllToursPage.SortBy' | translate}}</div>
-        <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">{{currentSorting.fieldName}} <mat-icon>arrow_drop_down</mat-icon></button>
+        <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">{{currentSorting.fieldName | translate}} <mat-icon>arrow_drop_down</mat-icon></button>
         <mat-menu #menu="matMenu">
           <button *ngFor="let sortParam of sortingParameters"
                   (click)="sort(sortParam)"
                   mat-menu-item
                   [ngStyle]="{'font-weight': sortParam.fieldKey == currentSorting.fieldKey ? '600': '400'}">
-            {{sortParam.fieldName}}
+            {{sortParam.fieldName | translate}}
           </button>
         </mat-menu>
       </div>

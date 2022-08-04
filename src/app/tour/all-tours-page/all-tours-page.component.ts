@@ -23,12 +23,12 @@ export class AllToursPageComponent implements OnInit {
   filter: string = '';
   currentSortDirection = 'DESC';
   sortingParameters: SortingParameter[] =
-    [new SortingParameter('price', 'ціна'),
-      new SortingParameter('eventDate', 'дата'),
-      new SortingParameter('rate', 'рейтинг'),
-      new SortingParameter('name', 'назва'),
+    [new SortingParameter('price', 'AllToursPage.PriceSort'),
+      new SortingParameter('eventDate', 'AllToursPage.DateSort'),
+      new SortingParameter('rate', 'AllToursPage.RateSort'),
+      new SortingParameter('name', 'AllToursPage.NameSort'),
     ];
-  currentSorting = new SortingParameter('name', 'назва');
+  currentSorting = new SortingParameter('name', 'AllToursPage.NameSort');
 
   constructor(private tourService: TourService) {
   }

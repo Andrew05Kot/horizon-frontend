@@ -29,7 +29,11 @@
     "Title": "All travels",
     "NotFound": "Nothing found",
     "SearchPlaceholder": "Search by name and description",
-    "SortBy": "Sort by"
+    "SortBy": "Sort by",
+    "NameSort": "name",
+    "DateSort": "date",
+    "RateSort": "rate",
+    "PriceSort": "price"
   },
   "ConfirmTour": {
     "Question1": "Do you really want to go on a ",
