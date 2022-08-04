@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="right-part" *ngIf="tour.owner?.id == this.currentUser?.id">
-      <button mat-flat-button color="accent" (click)="openEditTour()">Редагувати</button>
+      <button mat-flat-button color="accent" (click)="openEditTour()">{{'ProfileTourHistoryCard.Edit' | translate}}</button>
     </div>
   </div>
 </mat-card>

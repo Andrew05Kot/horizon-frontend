@@ -16,16 +16,18 @@ export class ImageService {
   }
 
   static getImageLink(image: ImageModel): string {
-    if (image?.imageName) {
-      return `${ImageService.url}/${image.imageName}`;
-    }
+    //TODO uncomment
+    // if (image?.imageName) {
+    //   return `${ImageService.url}/${image.imageName}`;
+    // }
     return null;
   }
 
   static getImageLinkByName(imageName: string): string {
-    if (imageName) {
-      return `${ImageService.url}/${imageName}`;
-    }
+     //TODO uncomment
+    // if (imageName) {
+    //   return `${ImageService.url}/${imageName}`;
+    // }
     return null;
   }
 

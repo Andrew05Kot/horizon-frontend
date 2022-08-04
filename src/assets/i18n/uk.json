@@ -10,5 +10,83 @@
   "UserDropdown": {
     "ProfileLink": "Профіль",
     "LogoutLink": "Вийти"
+  },
+  "HomePage": {
+    "TopTourists": "Топ туристів",
+    "TopTours": "Топ мандрівок",
+    "ToursList": "Список мандрівок",
+    "ViewAll": "Дивитись усі.."
+  },
+  "LoginPage": {
+    "Title": "Авторизація",
+    "LoginViaGoogle": "Авторизуватись з Google",
+    "LoginViaFacebook": "Авторизуватись з Facebook"
+  },
+  "MyHistorryPage": {
+    "MyRequests": "Мої запити"
+  },
+  "AllToursPage": {
+    "Title": "Усі мандрівки",
+    "NotFound": "Нічого не знайдено",
+    "SearchPlaceholder": "Пошук по імені та опису",
+    "SortBy": "Сортувати за"
+  },
+  "ConfirmTour": {
+    "Question1": "Чи дісно ви хочете піти в мандрівку",
+    "Question2": ", разом з ",
+    "Cancel": "Скасувати",
+    "Confirm": "Підтвердити"
+  },
+  "TourBookingCard": {
+    "WantsGoTo": "Хоче вирушити в: ",
+    "Refuse": "Відмовити",
+    "Accept": "Прийняти"
+  },
+  "TourBooking": {
+    "Header": "Запити користувачів"
+  },
+  "EditTourImages": {
+    "UploadMessage": "завантажити зображення"
+  },
+  "EditTourConponent": {
+    "NameLabel": "Назва",
+    "NameRequired": "назва мандрівки є обов'язковою",
+    "PriceLabel": "Ціна за мандрівку (у гривнях)",
+    "PriceRequired": "ціна мандрівки є обов'язковою",
+    "DateTimeLabel": "Дата та час проведення",
+    "DescriptionLabel": "Опис",
+    "SelectOnMap": "Вибрати на мапі ",
+    "ImagesLabel": "Фото",
+    "Save": "Зберегти"
+  },
+  "TourInfoPage": {
+    "OpenMap": "Відкрити на мапі",
+    "Edit": "Редагувати",
+    "Remove": "Видалити",
+    "PriceLabel": "Ціна туру",
+    "CurrencyType": "грн.",
+    "DateTimeLabel": "Дата та час проведення туру",
+    "JoinedUsersLabel": "З вами також підуть",
+    "AcceptTourLabel": "Піти в мандрівку"
+  },
+  "ProfileEditpage": {
+    "FirstNameLabel": "Ім'я",
+    "FirstNameRequired": "Ім'я є обов'язковим",
+    "LastNameLabel": "Прізвище",
+    "LastNameRequired": "Прізвище є обов'язковe",
+    "PhoneNumberLabel": "Номер телефону",
+    "PhoneNumberRequired": " Номер телефону є обов'язковим",
+    "AbountMeLabel": "Про мене",
+    "Cancel": "Скасувати",
+    "Save": "Зберегти"
+  },
+  "ProfileTourHistoryCard": {
+    "Edit": "Редагувати"
+  },
+  "ProfileInfoPage": {
+    "HelloLabel": "Привіт!",
+    "MyNameLabel": "Мене звати,",
+    "AboutMeLabel": "Про мене",
+    "MyTripsLabel": "Мої мандрівки"
   }
 }

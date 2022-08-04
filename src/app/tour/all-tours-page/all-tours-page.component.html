@@ -1,7 +1,7 @@
 <section>
   <div class="tours">
     <div class="label">
-      <h1>Усі мандрівки</h1>
+      <h1>{{'AllToursPage.Title' | translate}}</h1>
     </div>
     <div class="toolbar">
       <div class="searching">
@@ -11,10 +11,10 @@
                autocomplete="off"
                [(ngModel)]="filter"
                (keyup)="loadPageHandler(pageEvent)"
-               placeholder="Пошук по імені та опису">
+               placeholder="{{'AllToursPage.SearchPlaceholder' | translate}}">
       </div>
       <div class="sorting">
-        <div class="label">Сортувати за</div>
+        <div class="label">{{'AllToursPage.SortBy' | translate}}</div>
         <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">{{currentSorting.fieldName}} <mat-icon>arrow_drop_down</mat-icon></button>
         <mat-menu #menu="matMenu">
           <button *ngFor="let sortParam of sortingParameters"
@@ -32,7 +32,7 @@
         <app-paginator [count]="itemsTotal" [pageSize]="pageSize" (pageInfo)="loadPageHandler($event)"></app-paginator>
       </div>
       <div class="not-found">
-        <h2 *ngIf="itemsTotal == 0">Нічого не знайдено :(</h2>
+        <h2 *ngIf="itemsTotal == 0">{{'AllToursPage.NotFound' | translate}} :(</h2>
       </div>
     </div>
   </div>

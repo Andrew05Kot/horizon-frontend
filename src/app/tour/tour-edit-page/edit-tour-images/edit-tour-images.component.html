@@ -8,7 +8,7 @@
         <div (click)="openFileSelector()" class="image-container"
              *ngIf="!isImageInProcessing; else progressSpin">
           <div class="message">
-            завантажити зображення
+            {{'EditTourImages.UploadMessage' | translate}}
           </div>
         </div>
       </ng-template>

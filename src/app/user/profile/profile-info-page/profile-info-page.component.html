@@ -5,11 +5,11 @@
         <div class="left">
           <div class="hello-block">
             <h1>
-              Привіт!
+              {{'ProfileInfoPage.HelloLabel' | translate}}
             </h1>
           </div>
           <div class="name-block">
-            <div class="full-name">Мене звати, {{user.fullName}}</div>
+            <div class="full-name">{{'ProfileInfoPage.MyNameLabel' | translate}} {{user.fullName}}</div>
           </div>
           <div class="edit-block" *ngIf="user.id == currentUser.id">
             <button mat-flat-button color="accent" (click)="goToEditProfile()" >Редагувати профіль</button>
@@ -28,7 +28,7 @@
     <mat-card>
       <div class="content">
         <div class="header-label">
-          Про мене
+          {{'ProfileInfoPage.AboutMeLabel' | translate}}
         </div>
         <div class="about-me-content">
           {{user.aboutMe}}
@@ -41,7 +41,7 @@
     <mat-card>
       <div class="content">
         <div class="header-label">
-          Мої мандрівки
+          {{'ProfileInfoPage.MyTripsLabel' | translate}}
         </div>
         <div class="list">
           <ng-container *ngFor="let tour of tours">
