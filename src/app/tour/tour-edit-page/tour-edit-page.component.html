@@ -4,26 +4,26 @@
       <div class="fields">
         <div class="field">
           <label class="label">
-            Назва
+            {{'EditTourConponent.NameLabel' | translate}}
           </label>
           <input class="field-input" type="text" formControlName="name" autocomplete="disabled" required="true">
           <mat-error *ngIf="tourForm.hasError('required', 'name') && tourForm.get('name').touched">
-            назва мандрівки є обов'язковою
+            {{'EditTourConponent.NameRequired' | translate}}
           </mat-error>
         </div>
 
         <div class="field">
           <label class="label">
-            Ціна за мандрівку (у гривнях)
+            {{'EditTourConponent.PriceLabel' | translate}}
           </label>
           <input class="field-input price" type="number" formControlName="price" autocomplete="disabled" required="true">
           <mat-error *ngIf="tourForm.hasError('required', 'price') && tourForm.get('price').touched">
-            ціна мандрівки є обов'язковою
+            {{'EditTourConponent.PriceRequired' | translate}}
           </mat-error>
         </div>
 
         <div class="field">
-          <label>Дата та час проведення</label>
+          <label>{{'EditTourConponent.DateTimeLabel' | translate}}</label>
           <mat-form-field class="date-time">
             <input class="date-time" formControlName="eventDate" matInput [ngxMatDatetimePicker]="picker" [(ngModel)]="myDatePicker">
             <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
@@ -33,7 +33,7 @@
 
         <div class="field">
           <label class="label">
-            Опис
+            {{'EditTourConponent.DescriptionLabel' | translate}}
           </label>
           <mat-form-field>
                         <textarea
@@ -51,13 +51,13 @@
 
         <div class="field">
           <div class="open-map-button">
-            <button mat-flat-button color="accent" (click)="openSelectMapDialog()">Вибрати на мапі <mat-icon> map</mat-icon> </button>
+            <button mat-flat-button color="accent" (click)="openSelectMapDialog()">{{'EditTourConponent.SelectOnMap' | translate}}<mat-icon> map</mat-icon> </button>
           </div>
         </div>
 
         <div class="field">
           <label class="label">
-            Фото
+            {{'EditTourConponent.ImagesLabel' | translate}}
           </label>
           <div class="image-cropper">
             <app-edit-tour-images [parentForm]="tourForm"></app-edit-tour-images>
@@ -73,7 +73,7 @@
           mat-flat-button
           color="accent"
           (click)="save()"
-        > Save
+        > {{'EditTourConponent.Save' | translate}}
         </button>
       </div>
     </div>

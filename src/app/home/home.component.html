@@ -2,7 +2,7 @@
 
   <div class="top-users" *ngIf="topTourists?.length > 0">
     <div class="label">
-      <h1>Топ туристів</h1>
+      <h1>{{'HomePage.TopTourists' | translate}}</h1>
     </div>
     <div class="users-list">
       <div *ngFor="let user of topTourists">
@@ -13,7 +13,7 @@
 
   <div class="top-tours" >
     <div class="label">
-      <h1>Топ мандрівок</h1>
+      <h1>{{'HomePage.TopTours' | translate}}</h1>
     </div>
     <div class="top-tours-list">
       <carousel *ngIf="carouselModels.length > 0"
@@ -40,11 +40,11 @@
 
   <div class="tours">
     <div class="label">
-      <h1>Список мандрівок</h1>
+      <h1>{{'HomePage.ToursList' | translate}}</h1>
     </div>
     <app-tours-list [_tours]="tours"></app-tours-list>
     <div class="button-row">
-      <a routerLink="/tours" mat-flat-button color="accent">Дивитись усі..</a>
+      <a routerLink="/tours" mat-flat-button color="accent">{{'HomePage.ViewAll' | translate}}</a>
     </div>
   </div>
 

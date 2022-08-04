@@ -16,37 +16,37 @@
           <div class="fields">
             <div class="field">
               <label class="label">
-                Ім'я
+                {{'ProfileEditpage.FirstNameLabel' | translate}}
               </label>
               <input type="text" formControlName="firstName" autocomplete="disabled" required="true">
               <mat-error *ngIf="userForm.hasError('required', 'firstName') && userForm.get('firstName').touched">
-                Ім'я є обов'язковим
+                {{'ProfileEditpage.FirstNameRequired' | translate}}
               </mat-error>
             </div>
 
             <div class="field">
               <label class="label">
-                Прізвище
+                {{'ProfileEditpage.LastNameLabel' | translate}}
               </label>
               <input type="text" formControlName="lastName" autocomplete="disabled" required="true">
               <mat-error *ngIf="userForm.hasError('required', 'lastName') && userForm.get('lastName').touched">
-                Прізвище є обов'язковим
+                {{'ProfileEditpage.LastNameRequired' | translate}}
               </mat-error>
             </div>
 
             <div class="field">
               <label class="label">
-                Номер телефону
+                {{'ProfileEditpage.PhoneNumberLabel' | translate}}
               </label>
               <input type="tel" formControlName="phoneNumber" autocomplete="disabled" required="true">
               <mat-error *ngIf="userForm.hasError('required', 'phoneNumber') && userForm.get('phoneNumber').touched">
-                Номер телефону є обов'язковим
+                {{'ProfileEditpage.PhoneNumberRequired' | translate}}
               </mat-error>
             </div>
 
             <div class="field">
               <label class="label">
-                Про мене
+                {{'ProfileEditpage.AbountMeLabel' | translate}}
               </label>
               <mat-form-field>
                         <textarea
@@ -69,7 +69,7 @@
   <div class="buttons-row">
     <div class="cancel">
       <button mat-flat-button color="warn" (click)="cancel()">
-        Скасувати
+        {{'ProfileEditpage.Cancel' | translate}}
       </button>
     </div>
     <div class="submit">
@@ -77,7 +77,7 @@
               color="accent"
               (click)="save()"
               [disabled]="userForm.invalid">
-        Зберегти
+              {{'ProfileEditpage.Save' | translate}}
       </button>
     </div>
   </div>

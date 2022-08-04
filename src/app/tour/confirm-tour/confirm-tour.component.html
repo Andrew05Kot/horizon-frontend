@@ -1,13 +1,13 @@
 <section>
   <div class="question">
-    Чи дісно ви хочете піти в мандрівку "{{tour.name}}", разом з "{{tour.owner.firstName}} {{tour.owner.lastName}}"?
+    {{'ConfirmTour.Question1' | translate}} "{{tour.name}}" {{'ConfirmTour.Question2' | translate}} "{{tour.owner.firstName}} {{tour.owner.lastName}}"?
   </div>
   <div mat-dialog-actions class="actions">
     <button mat-flat-button color="primary" [mat-dialog-close]="true" >
-      Скасувати
+      {{'ConfirmTour.Cancel' | translate}}
     </button>
     <button mat-flat-button color="accent" (click)="makeTourRequest()">
-      Підтвердити
+      {{'ConfirmTour.Confirm' | translate}}
     </button>
   </div>
 </section>

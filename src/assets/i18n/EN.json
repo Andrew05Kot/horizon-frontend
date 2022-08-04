@@ -1,0 +1,96 @@
+{
+  "NavBar": {
+    "HomePageLink": "Home",
+    "ToursLink": "All travels",
+    "EditLink": "Create",
+    "RequestsLink": "Requests",
+    "MyHistoryLink": "History",
+    "LoginLink": "Login"
+  },
+  "UserDropdown": {
+    "ProfileLink": "Profile",
+    "LogoutLink": "Logout"
+  },
+  "HomePage": {
+    "TopTourists": "Top tourists",
+    "TopTours": "Top travels",
+    "ToursList": "Travels list",
+    "ViewAll": "View all.."
+  },
+  "LoginPage": {
+    "Title": "Authorization",
+    "LoginViaGoogle": "Login via Google",
+    "LoginViaFacebook": "Login via Facebook"
+  },
+  "MyHistorryPage": {
+    "MyRequests": "My requests"
+  },
+  "AllToursPage": {
+    "Title": "All travels",
+    "NotFound": "Nothing found",
+    "SearchPlaceholder": "Search by name and description",
+    "SortBy": "Sort by",
+    "NameSort": "name",
+    "DateSort": "date",
+    "RateSort": "rate",
+    "PriceSort": "price"
+  },
+  "ConfirmTour": {
+    "Question1": "Do you really want to go on a ",
+    "Question2": " with ",
+    "Cancel": "Cancel",
+    "Confirm": "Confirm"
+  },
+  "TourBookingCard": {
+    "WantsGoTo": "Wants go to: ",
+    "Refuse": "Refuse",
+    "Accept": "Accept"
+  },
+  "TourBooking": {
+    "Header": "User requests"
+  },
+  "EditTourImages": {
+    "UploadMessage": "upload a image"
+  },
+  "EditTourConponent": {
+    "NameLabel": "Name",
+    "NameRequired": "the name of the travel is required",
+    "PriceLabel": "Price per travel (in hryvnias)",
+    "PriceRequired": "the price of the travel is required",
+    "DateTimeLabel": "Date and time",
+    "DescriptionLabel": "Description",
+    "SelectOnMap": "Select on the map ",
+    "ImagesLabel": "Images",
+    "Save": "Save"
+  },
+  "TourInfoPage": {
+    "OpenMap": "Open on the map",
+    "Edit": "Edit",
+    "Remove": "Remove",
+    "PriceLabel": "Price of trip",
+    "CurrencyType": "UAH",
+    "DateTimeLabel": "Date and time of the trip",
+    "JoinedUsersLabel": "They will also go with you",
+    "AcceptTourLabel": "Go on a trip"
+  },
+  "ProfileEditpage": {
+    "FirstNameLabel": "First Name",
+    "FirstNameRequired": "First Name is required",
+    "LastNameLabel": "Last Name",
+    "LastNameRequired": "Last Name is required",
+    "PhoneNumberLabel": "Phone number ",
+    "PhoneNumberRequired": " Phone number is required",
+    "AbountMeLabel": "Abount me",
+    "Cancel": "Cancel",
+    "Save": "Save"
+  },
+  "ProfileTourHistoryCard": {
+    "Edit": "Edit"
+  },
+  "ProfileInfoPage": {
+    "HelloLabel": "Hello!",
+    "MyNameLabel": "My name is",
+    "AboutMeLabel": "About me",
+    "MyTripsLabel": "My trips"
+  }
+}

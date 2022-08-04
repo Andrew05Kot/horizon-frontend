@@ -1,0 +1,11 @@
+<ng-container>
+  <button mat-button [matMenuTriggerFor]="menu">{{ getUnicodeFlagIcon(_currentLocale) }}</button>
+  <mat-menu #menu="matMenu" class="nav-dropdown">
+    <button mat-menu-item
+            *ngFor="let locale of _locales"
+            (click)="selectLocale(locale)"
+            [ngClass]="{'selected-locale' : _currentLocale.language == locale.language}">
+      {{ getUnicodeFlagIcon(locale) }}
+    </button>
+  </mat-menu>
+</ng-container>

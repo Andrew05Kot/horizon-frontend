@@ -1,9 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {TokenStorageService} from "../_services/token-storage.service";
-import {AuthService} from "../_services/auth.service";
-
-// import {UserService} from "../_services/user.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from "../_services/auth.service";
 
 @Component({
   selector: 'app-auth',
@@ -13,9 +10,7 @@ import {AuthService} from "../_services/auth.service";
 export class AuthComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-              private authService: AuthService,
-              // private userService: UserService,
-              private tokenStorage: TokenStorageService) {
+    private authService: AuthService) {
   }
 
   ngOnInit(): void {
